@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\BookController;
 
 
 /*
@@ -22,7 +22,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/books/home', [App\Http\Controllers\BooksController::class, 'index'])->name('books.home');
-Route::get('/form/books', [App\Http\Controllers\BooksController::class, 'form'])->name('form.books');
-Route::get('/form/supliers', [App\Http\Controllers\BooksController::class, 'formSupliers'])->name('form.supliers');
-Route::get('/form/user', [App\Http\Controllers\BooksController::class, 'formUser'])->name('form.user');
+
+Route::get('/books/home', [App\Http\Controllers\BookController::class, 'index'])->name('books.home');
+Route::get('/admin/books/create', [App\Http\Controllers\BookController::class, 'create'])->name('admin.books.create');
+Route::post('/admin/books/store', [App\Http\Controllers\BookController::class, 'store'])->name('admin.books.store');
+Route::get('/admin/books/list', [App\Http\Controllers\BookController::class, 'list'])->name('admin.books.list');
+
+Route::get('/admin/books/edit/{id}', [App\Http\Controllers\BookController::class, 'edit'])->name('admin.books.edit');
+Route::post('/admin/books/update/{id}', [App\Http\Controllers\BookController::class, 'update'])->name('admin.books.update');
+Route::get('/admin/books/delete/{id}', [App\Http\Controllers\BookController::class, 'delete'])->name('admin.books.delete');
+
+Route::get('/admin/books/login', [App\Http\Controllers\HomeController::class, 'login'])->name('passwords.login');
+
+
+Route::get('/form/formBooks', [App\Http\Controllers\BookController::class, 'formBook'])->name('form.FormBooks');
+
+Route::get('/form/supliers', [App\Http\Controllers\BookController::class, 'formSupliers'])->name('form.formSupliers');
+
+Route::get('/form/user', [App\Http\Controllers\BookController::class, 'formUser'])->name('form.formUser');

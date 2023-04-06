@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuplierTable extends Migration
+class CreateBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateSuplierTable extends Migration
      */
     public function up()
     {
-        Schema::create('suplier', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('telephone');
-            $table->string('manager');
-            $table->string('email');           
+            $table->string('title', 150);
+            $table->string('author', 150);
+            $table->string('publisher', 150);
+            $table->string('isbn', 13);
+            $table->string('quantity');
+            $table->string('price');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateSuplierTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suplier');
+        Schema::dropIfExists('books');
     }
 }

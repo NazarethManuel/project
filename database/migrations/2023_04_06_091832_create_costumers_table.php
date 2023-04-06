@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBooksSuplierTable extends Migration
+class CreateCostumersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateBooksSuplierTable extends Migration
      */
     public function up()
     {
-        Schema::create('books_suplier', function (Blueprint $table) {
-            $table->foreignId('books_id')->constrained();
-            $table->foreignId('suplier_id')->constrained();
+        Schema::create('costumers', function (Blueprint $table) {
+            $table->id();
+            $table->string('title', 150);
+            $table->string('telephone', 150);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateBooksSuplierTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books_suplier');
+        Schema::dropIfExists('costumers');
     }
 }
