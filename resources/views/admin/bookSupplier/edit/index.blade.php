@@ -7,7 +7,7 @@
         <div class="container-fluid px-4">
             <h1 class="mt-4">Painel Principal</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Cliente</li>
+                <li class="breadcrumb-item active">Livros e Fornecedores</li>
             </ol>
 
             @if ($errors->any())
@@ -21,17 +21,17 @@
                         @endif
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Editar Cliente</h1>
+                <h1 class="mt-4">Editar </h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form action="{{ route('admin.costumer.update',$costumer->id) }}" method="POST">
+                        <form action="{{ route('admin.bookSupplier.update',$bookSupplier->id) }}" method="POST">
                             @csrf
-
-                            @include('form._formCostumer.index')
+                            
+                            @include('form._formBookSupplier.index')
 
                             <div class="col-md-12 mt-3 text-end">
                                 <button class="btn btn-primary shadow" type="submit">Editar</button>

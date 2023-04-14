@@ -29,14 +29,21 @@
                                 <tr>
                                     <th>Nome do cliente</th>
                                     <th>Nº Telefone</th>
+                                    <th>Acção</th>
                                 </tr>
                             </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Nome do cliente</th>
+                                    <th>Nº Telefone</th>
+                                    <th>Acção</th>
+                                </tr>
+                            </tfoot>
                             <tbody>
                                 @foreach ($costumer as $costumers)
                                 <tr>
                                     <td>{{ $costumers->title }}</td>
                                     <td>{{ $costumers->telephone }}</td>
-
                                     <td>
                                         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                                             <li class="nav-item dropdown">
@@ -73,7 +80,6 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
@@ -81,5 +87,4 @@
             </div>
         </div>
     </main>
-
     @endsection

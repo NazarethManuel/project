@@ -18,7 +18,7 @@
                 <li><a class="dropdown-item" href="#!">Definições</a></li>
                 <li><a class="dropdown-item" href="#!"></a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href='#'>Sair</a></li>
+                <li><a class="dropdown-item" href='{{ route('logout') }}'>Sair</a></li>
             </ul>
         </li>
     </ul>

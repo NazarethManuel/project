@@ -11,26 +11,26 @@
             </ol>
 
             @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Cadastrar clientes</h1>
+                <h1 class="mt-4">Cadastrar</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form action="{{ route('admin.costumer.store') }}" method="post">
+                        <form action="{{ route('admin.bookSupplier.store') }}" method="post">
                             @csrf
-                            @include('form._formCostumer.index')
+                            @include('form._formBookSupplier.index')
                             <div class="col-md-1 mt-1 text-end">
                                 <button class="btn btn-primary shadow">Cadastrar</button>
                             </div>

@@ -11,11 +11,9 @@ class Book extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'book';
+    protected $table = 'books';
 
     protected $guarded = ['id'];
 
     protected $dates = ['deleted_at'];
-
-    
 }

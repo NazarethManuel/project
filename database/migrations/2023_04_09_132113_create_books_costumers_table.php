@@ -14,11 +14,13 @@ class CreateBooksCostumersTable extends Migration
     public function up()
     {
         Schema::create('books_costumers', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('fk_books_id');
             $table->foreign('fk_books_id')->references('id')->on('books')->onDelete('CASCADE')->onUpgrade('CASCADE');
-
             $table->unsignedBigInteger('fk_costumers_id');
             $table->foreign('fk_costumers_id')->references('id')->on('costumers')->onDelete('CASCADE')->onUpgrade('CASCADE');
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
