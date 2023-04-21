@@ -6,13 +6,19 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Painel Principal</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Livros</li>
-            </ol>
+            <div class="col-md-11 ml-5 ">
+                <br>
+                <h3 class="mt-4">Detalhe do Livro </h3>
+                <br>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Detalhe do Livro</li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.book.list.index') }}">Lista de Livros</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                </ol>
+            </div>
+            <hr>
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Detalhe do Livro</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
@@ -53,6 +59,5 @@
             </div>
         </div>
     </main>
- 
-@endsection
 
+    @endsection

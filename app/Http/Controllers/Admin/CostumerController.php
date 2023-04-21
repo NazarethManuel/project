@@ -24,8 +24,11 @@ class CostumerController extends Controller
     public function store(Request $request)
     {
         $response = $this->validate($request, [
-            'name' => 'required',
-            'telephone' => 'required'
+            'name' => 'required|max:150',
+            'telephone' => 'required|max:150',
+        ],[
+            'name.required'=>'Digite o Nome do cliente',
+            'telephone.required'=>'Digite o contacto do cliente'
         ]);
 
         Costumer::create($response);
@@ -52,8 +55,11 @@ class CostumerController extends Controller
     public function update(Request $request, $id)
     {
         $response=$request->validate([
-            'name' => 'required',
-            'telephone' => 'required',
+            'name' => 'required|max:150',
+            'telephone' => 'required|max:150',
+        ],[
+            'name.required'=>'Digite o Nome do cliente',
+            'telephone.required'=>'Digite o contacto do cliente'
         ]);
         Costumer::find($id)->update($response);
         return redirect()->route('admin.costumer.list.index')->with('edit', '1');

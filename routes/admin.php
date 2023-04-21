@@ -49,15 +49,4 @@ Route::post('admin/bookSupplier/{id}', ['as'=>'admin.bookSupplier.update','uses'
 Route::get('admin/bookSupplier/destroy/{id}', ['as'=>'admin.bookSupplier.destroy','uses'=>'Admin\BookSupplierController@destroy']);
 //END BOOK_SUPPLIER
 
-/*
-//COSTUMERS_BOOK
-Route::get('admin/costumer/list/index', ['as'=>'admin.costumer.list.index','uses'=>'Admin\CostumerController@index']);
-Route::get('admin/costumer/create/index', ['as'=>'admin.costumer.create.index','uses'=>'Admin\CostumerController@create']);
-Route::post('admin/costumer/create/store', ['as'=>'admin.costumer.store','uses'=>'Admin\CostumerController@store']);
-Route::get('admin/costumer/show/{id}', ['as'=>'admin.costumer.show','uses'=>'Admin\CostumerController@show']);
-Route::get('admin/costumer/create/edit/{id}', ['as'=>'admin.costumer.edit.index','uses'=>'Admin\CostumerController@edit']);
-Route::post('admin/costumer/update/{id}', ['as'=>'admin.costumer.update','uses'=>'Admin\CostumerController@update']);
-Route::get('admin/costumer/destroy/{id}', ['as'=>'admin.costumer.destroy','uses'=>'Admin\CostumerController@destroy']);
-//END COSTUMER_BOOK
-*/
 });

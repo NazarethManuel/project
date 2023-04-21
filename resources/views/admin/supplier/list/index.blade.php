@@ -7,13 +7,20 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Painel Principal</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Fornecedor</li>
-            </ol>
+            <div class="col-md-11 ml-5 ">
+                <br>
+                  <h3 class="mt-4">Lista de Fornecedores</h3>
+                  <br>
+                      <ol class="breadcrumb mb-4">
+                          <li class="breadcrumb-item active">Lista de Fornecedores</li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.supplier.create.index') }}">Adicionar Novo Fornecedor</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                      </ol>
+              </div>
+              <hr>
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Lista de Fornecedores</h1>
+
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
@@ -21,15 +28,15 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Fornecedores Cadastrados
+                       Lista de Fornecedores
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
                                     <th>Nome Fornecedor</th>
-                                    <th>Nº Telefone</th>
-                                    <th>Gerente</th>
+
+
                                     <th>NIF</th>
                                     <th>Acção</th>
 
@@ -39,8 +46,6 @@
                                 @foreach ($supplier as $suppliers)
                                 <tr>
                                     <td>{{ $suppliers->name }}</td>
-                                    <td>{{ $suppliers->telephone }}</td>
-                                    <td>{{ $suppliers->manager }}</td>
                                     <td>{{ $suppliers->nif }}</td>
                                     <td>
                                         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

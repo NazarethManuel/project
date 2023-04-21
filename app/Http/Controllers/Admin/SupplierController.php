@@ -25,11 +25,17 @@ class SupplierController extends Controller
     {
 
         $response = $this->validate($request, [
-            'name' =>'required',
-            'telephone' => 'required',
-            'manager' => 'required',
-            'nif' =>'required',
-            'email' =>'required'
+            'name' => 'required |max:150',
+            'telephone' => 'required|max:150',
+            'manager' => 'required|max:150',
+            'nif' => 'required|max:150',
+            'email' => 'required|email|unique:supplier,email,except,id'
+        ],[
+            'name.required'=>'Digite o Nome do fornecedor',
+            'telephone.required'=>'Digite o contacto do fornecedor',
+            'manager.required'=>'Digite o nome do Gerente',
+            'nif.required'=>'Digite o nif do fornecedor',
+            'email.required'=>'Digite o email'
         ]);
 
         Supplier::create($response);
@@ -52,11 +58,17 @@ class SupplierController extends Controller
     public function update(Request $request, $id)
     {
         $response=$request->validate([
-            'name' => 'required',
-            'telephone' => 'required',
-            'manager' => 'required',
-            'nif' => 'required',
-            'email' => 'required'
+            'name' => 'required |max:150',
+            'telephone' => 'required|max:150',
+            'manager' => 'required|max:150',
+            'nif' => 'required|max:150',
+            'email' => 'required|email|unique:supplier,email,except,id'
+        ],[
+            'name.required'=>'Digite o Nome do fornecedor',
+            'telephone.required'=>'Digite o contacto do fornecedor',
+            'manager.required'=>'Digite o nome do Gerente',
+            'nif.required'=>'Digite o nif do fornecedor',
+            'email.required'=>'Digite o email'
         ]);
         Supplier::find($id)->update($response);
         return redirect()->route('admin.supplier.list.index')->with('edit', '1');

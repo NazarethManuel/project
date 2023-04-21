@@ -23,5 +23,10 @@
         <input type="text" class="form-control" name="email" id="email"  value={{ isset($supplier->email)? $supplier->email : ''}}>
 
     </div>
+    <div class="col-md-6">
+        <label for="type">Tipo</label>
+        <input type="text" class="form-control" name="type" id="type"  value={{ isset($supplier->type)? $supplier->type : ''}}>
+
+    </div>
 
 </div>

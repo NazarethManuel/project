@@ -7,13 +7,19 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Painel Principal</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Clientes</li>
-            </ol>
+            <div class="col-md-11 ml-5 ">
+                <br>
+                <h3 class="mt-4">Lista de Clientes</h3>
+                <br>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Lista de Clientes </li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.costumer.create.index') }}">Adicionar Novo Cliente</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                </ol>
+            </div>
+            <hr>
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Lista de Clientes</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
@@ -21,14 +27,14 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Clientes Cadastrados
+                        Lista de Clientes
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
                                     <th>Nome do cliente</th>
-                                    <th>Nº Telefone</th>
+                                    <th>Cotacto</th>
                                     <th>Acção</th>
                                 </tr>
                             </thead>
@@ -56,16 +62,16 @@
 
                                                     <li>
                                                         <a href="{{ route('admin.costumer.show', $costumers->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                                            </svg><span class="text-second"> Detalhe</span>
+                                                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                                        </svg><span class="text-second"> Detalhe</span>
                                                         </a>
                                                     </li>
 
                                                     <li>
                                                         <a href="{{ route('admin.costumer.destroy', $costumers->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                            </svg> <span class="text-danger"> Eliminar</span>
+                                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                                        </svg> <span class="text-danger">  Eliminar</span>
                                                         </a>
                                                     </li>
                                                 </ul>

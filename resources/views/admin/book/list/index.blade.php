@@ -7,13 +7,20 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Painel Principal</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Livros</li>
-            </ol>
+
+            <div class="col-md-11 ml-5">
+                <br>
+                    <h3 class="mt-4">Lista de Livros Cadastrados </h3>
+                    <br>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Lista de Livros </li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.book.create.index') }}">Adicionar Novo Livro </a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                        </ol>
+                    </div>
+                    <hr>
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Lista de Livros</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
@@ -21,7 +28,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Livros Cadastrados
+                       Lista de Livros
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">

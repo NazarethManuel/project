@@ -5,10 +5,18 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Painel Principal</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Fornecedor</li>
-            </ol>
+            <div class="col-md-11 ml-5 ">
+                <br>
+                  <h3 class="mt-4">Adicionar Novo Fornecedor</h3>
+                  <br>
+                      <ol class="breadcrumb mb-4">
+                          <li class="breadcrumb-item active">Adicionar Novo</li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.supplier.list.index') }}">Lista de Fornecedores</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                      </ol>
+              </div>
+              <hr>
+              
             @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -20,7 +28,6 @@
                         @endif
 
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Cadastrar Fornecedor</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>

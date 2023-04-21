@@ -31,6 +31,9 @@ class BookSupplierController extends Controller
         $data = $this->validate($request, [
             'fk_books_id' => 'required',
             'fk_suppliers_id' => 'required'
+        ],[
+            'fk_books_id.required'=>'Selecione o Livro',
+            'fk_suppliers_id.required'=>'Selecione o forncedor'
         ]);
 
         BookSupplier::create($data);
@@ -59,6 +62,9 @@ class BookSupplierController extends Controller
         $data = $this->validate($request, [
             'fk_books_id' => 'required',
             'fk_suppliers_id' => 'required'
+        ],[
+            'fk_books_id.required'=>'Selecione o Livro',
+            'fk_suppliers_id.required'=>'Selecione o forncedor'
         ]);
 
        BookSupplier::find($id)->update($data);

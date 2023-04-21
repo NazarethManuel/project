@@ -25,12 +25,19 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $response = $this->validate($request, [
-            'title' => 'required',
-            'author' => 'required',
-            'publisher' => ' required',
-            'isbn' => 'required',
-            'quantity' => 'required',
-            'price' => 'required'
+            'title' => 'required|max:150',
+            'author' => 'required|max:150',
+            'publisher' => ' required|max:150',
+            'isbn' => 'required|unique:books,isbn,except,id',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric'
+        ],[
+            'title.required'=>'Digite o título do livro',
+            'author.required'=>'Digite o Autor do livro',
+            'publisher.required'=>'Digite a editora do livro',
+            'isbn.required'=>'Digite o isbn do livro',
+            'quantity.required'=>'Digite a quantidade do livro',
+            'price.required'=>'Digite o preço do livro',
         ]);
 
         Book::create($response);
@@ -53,12 +60,19 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         $response = $request->validate([
-            'title' => 'required',
-            'author' => 'required',
-            'publisher' => ' required',
-            'isbn' => 'required',
-            'quantity' => 'required',
-            'price' => 'required'
+            'title' => 'required|max:150',
+            'author' => 'required|max:150',
+            'publisher' => ' required|max:150',
+            'isbn' => 'required|unique:books,isbn,except,id',
+            'quantity' => 'required|numeric',
+            'price' => 'required|numeric'
+        ],[
+            'title.required'=>'Digite o título do livro',
+            'author.required'=>'Digite o Autor do livro',
+            'publisher.required'=>'Digite a editora do livro',
+            'isbn.required'=>'Digite o isbn do livro',
+            'quantity.required'=>'Digite a quantidade do livro',
+            'price.required'=>'Digite o preço do livro',
         ]);
         Book::find($id)->update($response);
         return redirect()->route('admin.book.list.index')->with('edit', '1');
