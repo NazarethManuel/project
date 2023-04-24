@@ -12,9 +12,9 @@
                 <h3 class="mt-4">Detalhe do Cliente</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Detalhe do Cliente </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.costumer.list.index') }}">
-                        lista de Clientes</a></li>
+                    <li class="breadcrumb-item active">Detalhe do Tipo de Pagamentos </li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.payment.list.index') }}">
+                        lista de Tipos de Pagamentos</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -28,26 +28,20 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Detalhe do Clientes
+                        Detalhe do Tipo de Pagamento
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Nome do cliente</th>
-                                    <th>Cotacto</th>
-                                    <th>Tipo de Cliente</th>
-                                    <th>Tipo de Pagamento</th>
+                                 <th>Tipo de Pagamento</th>
 
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr>
-                                    <td>{{ $costumer->name}}</td>
-                                    <td>{{ $costumer->telephone }}</td>
-                                    <td>{{ $costumer->type }}</td>
-                                    <td>{{ $costumer->typePayment}}</td>
+                                    <td>{{ $payment->type }}</td>
                                 </tr>
                             </tbody>
                         </table>

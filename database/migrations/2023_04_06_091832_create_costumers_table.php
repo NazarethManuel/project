@@ -17,6 +17,8 @@ class CreateCostumersTable extends Migration
             $table->id();
             $table->string('name', 150);
             $table->string('telephone', 150);
+            $table->string('type', 150);
+            $table->string('typePayment', 150);
             $table->softDeletes();
             $table->timestamps();
         });

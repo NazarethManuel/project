@@ -24,7 +24,7 @@
 
     </div>
     <div class="col-md-6">
-        <label for="price">Preço</label>
+        <label for="price">Preço unitário</label>
         <input type="number" class="form-control" name="price" id="price"  value={{ isset($book->price)? $book->price : ''}}>
 
     </div>

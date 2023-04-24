@@ -59,12 +59,12 @@
                 </div>
 
                 <div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBookSupplier " aria-expanded="false" aria-controls="collapseBookSupplier ">
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                        Livros e Fornecedores
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                    <div class="collapse" id="collapseBookSupplier" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                             <a class="nav-link" href="{{ route('admin.bookSupplier.create.index') }}">Cadastrar</a>
                             <a class="nav-link" href="{{ route('admin.bookSupplier.list.index') }}">Listar</a>
@@ -72,6 +72,20 @@
                     </div>
                 </div>
 
+
+                <div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePayments" aria-expanded="false" aria-controls="collapsePayments">
+                        <div class="sb-nav-link-icon"><i class="fas fa-money"></i></div>
+                       Tipo de Pagamento
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePayments" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link" href="{{ route('admin.payment.create.index') }}">Cadastrar</a>
+                            <a class="nav-link" href="{{ route('admin.payment.list.index') }}">Listar</a>
+                        </nav>
+                    </div>
+                </div>
 
                 </div>
             </div>

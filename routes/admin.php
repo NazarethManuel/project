@@ -34,10 +34,20 @@ Route::get('admin/costumer/list/index', ['as'=>'admin.costumer.list.index','uses
 Route::get('admin/costumer/create/index', ['as'=>'admin.costumer.create.index','uses'=>'Admin\CostumerController@create']);
 Route::post('admin/costumer/create/store', ['as'=>'admin.costumer.store','uses'=>'Admin\CostumerController@store']);
 Route::get('admin/costumer/show/{id}', ['as'=>'admin.costumer.show','uses'=>'Admin\CostumerController@show']);
-Route::get('admin/costumer/create/edit/{id}', ['as'=>'admin.costumer.edit.index','uses'=>'Admin\CostumerController@edit']);
+Route::get('admin/costumer/edit/{id}', ['as'=>'admin.costumer.edit.index','uses'=>'Admin\CostumerController@edit']);
 Route::post('admin/costumer/update/{id}', ['as'=>'admin.costumer.update','uses'=>'Admin\CostumerController@update']);
 Route::get('admin/costumer/destroy/{id}', ['as'=>'admin.costumer.destroy','uses'=>'Admin\CostumerController@destroy']);
 //END COSTUMER
+
+//PAYMENT
+Route::get('admin/payment/list/index', ['as'=>'admin.payment.list.index','uses'=>'Admin\PaymentController@index']);
+Route::get('admin/payment/create/index', ['as'=>'admin.payment.create.index','uses'=>'Admin\PaymentController@create']);
+Route::post('admin/payment/create/store', ['as'=>'admin.payment.store','uses'=>'Admin\PaymentController@store']);
+Route::get('admin/payment/show/{id}', ['as'=>'admin.payment.show','uses'=>'Admin\PaymentController@show']);
+Route::get('admin/payment/edit/{id}', ['as'=>'admin.payment.edit.index','uses'=>'Admin\PaymentController@edit']);
+Route::post('admin/payment/update/{id}', ['as'=>'admin.payment.update','uses'=>'Admin\PaymentController@update']);
+Route::get('admin/payment/destroy/{id}', ['as'=>'admin.payment.destroy','uses'=>'Admin\PaymentController@destroy']);
+//END PAYMENT
 
 //BOOK_SUPPLIER
 Route::get('admin/bookSupplier/list/index', ['as'=>'admin.bookSupplier.list.index','uses'=>'Admin\BookSupplierController@index']);

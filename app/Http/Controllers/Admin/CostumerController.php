@@ -26,9 +26,13 @@ class CostumerController extends Controller
         $response = $this->validate($request, [
             'name' => 'required|max:150',
             'telephone' => 'required|max:150',
+            'type'=>'required|max:150',
+            'typePayment'=>'required|max:150'
         ],[
             'name.required'=>'Digite o Nome do cliente',
-            'telephone.required'=>'Digite o contacto do cliente'
+            'telephone.required'=>'Digite o contacto do cliente',
+            'type.required'=>'Selecione o Tipo de cliente',
+            'typePayment.required'=>'Selecione o Tipo de Pagamento'
         ]);
 
         Costumer::create($response);
@@ -57,9 +61,13 @@ class CostumerController extends Controller
         $response=$request->validate([
             'name' => 'required|max:150',
             'telephone' => 'required|max:150',
+            'type'=>'required|max:150',
+            'typePayment'=>'required|max:150'
         ],[
             'name.required'=>'Digite o Nome do cliente',
-            'telephone.required'=>'Digite o contacto do cliente'
+            'telephone.required'=>'Digite o contacto do cliente',
+            'type.required'=>'Selecione o Tipo de cliente',
+            'typePayment.required'=>'Selecione o Tipo de Pagamento'
         ]);
         Costumer::find($id)->update($response);
         return redirect()->route('admin.costumer.list.index')->with('edit', '1');
