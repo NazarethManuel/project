@@ -29,7 +29,7 @@ class SupplierController extends Controller
             'telephone' => 'required|max:150',
             'manager' => 'required|max:150',
             'nif' => 'required|max:150',
-            'email' => 'required|email|unique:supplier,email,except,id'
+            'email' => 'required|email'
         ],[
             'name.required'=>'Digite o Nome do fornecedor',
             'telephone.required'=>'Digite o contacto do fornecedor',
@@ -62,7 +62,7 @@ class SupplierController extends Controller
             'telephone' => 'required|max:150',
             'manager' => 'required|max:150',
             'nif' => 'required|max:150',
-            'email' => 'required|email|unique:supplier,email,except,id'
+            'email' => 'required|email'
         ],[
             'name.required'=>'Digite o Nome do fornecedor',
             'telephone.required'=>'Digite o contacto do fornecedor',

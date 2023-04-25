@@ -4,15 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCostumersTable extends Migration
+class CreateTypePaymentsTable extends Migration
 {
-   
+
     public function up()
     {
-        Schema::create('costumers', function (Blueprint $table) {
+        Schema::create('type_payments', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->string('telephone', 150);
+            $table->string('type', 150);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -21,6 +20,6 @@ class CreateCostumersTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('costumers');
+        Schema::dropIfExists('type_payments');
     }
 }
