@@ -38,6 +38,7 @@
                                     <th>Nº Telefone</th>
                                     <th>Gerente</th>
                                     <th>NIF</th>
+                                    <th>Tipo de Fornecedor</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,6 +47,7 @@
                                     <td>{{ $supplier->telephone }}</td>
                                     <td>{{ $supplier->manager }}</td>
                                     <td>{{ $supplier->nif }}</td>
+                                    <td>{{ $supplier->type }}</td>
 
                                 </tr>
                             </tbody>

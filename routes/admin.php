@@ -70,6 +70,17 @@ Route::post('admin/typePayment/update/{id}', ['as'=>'admin.typePayment.update','
 Route::get('admin/typePayment/destroy/{id}', ['as'=>'admin.typePayment.destroy','uses'=>'Admin\TypePaymentController@destroy']);
 //END TYPE_PAYMENT
 
+//SALE
+Route::get('admin/sale/list/index', ['as'=>'admin.sale.list.index','uses'=>'Admin\SaleController@index']);
+Route::get('admin/sale/create/index', ['as'=>'admin.sale.create.index','uses'=>'Admin\SaleController@create']);
+Route::post('admin/sale/create/store', ['as'=>'admin.sale.store','uses'=>'Admin\SaleController@store']);
+Route::get('admin/sale/show/{id}', ['as'=>'admin.sale.show','uses'=>'Admin\SaleController@show']);
+Route::get('admin/sale/create/edit/{id}', ['as'=>'admin.sale.edit.index','uses'=>'Admin\SaleController@edit']);
+Route::post('admin/sale/update/{id}', ['as'=>'admin.sale.update','uses'=>'Admin\SaleController@update']);
+Route::get('admin/sale/destroy/{id}', ['as'=>'admin.sale.destroy','uses'=>'Admin\SaleController@destroy']);
+//END SALE
+
+
 //BOOK_SUPPLIER
 Route::get('admin/bookSupplier/list/index', ['as'=>'admin.bookSupplier.list.index','uses'=>'Admin\BookSupplierController@index']);
 Route::get('admin/bookSupplier/create/index', ['as'=>'admin.bookSupplier.create.index','uses'=>'Admin\BookSupplierController@create']);

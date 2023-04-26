@@ -20,4 +20,16 @@ class Book extends Model
     public function supplier(){
         return $this->belongsToMany(Supplier::class,'books_suppliers');
     }
+
+    public function costumer(){
+        return $this->belongsToMany(Costumer::class,'sales');
+    }
+
+    public function employer(){
+        return $this->belongsToMany(Employer::class,'sales');
+    }
+
+    public function typePayment(){
+        return $this->belongsToMany(typePayment::class,'sales');
+    }
 }

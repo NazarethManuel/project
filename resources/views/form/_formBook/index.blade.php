@@ -19,13 +19,18 @@
         <input type="number" class="form-control" name="isbn" id="title"  value={{ isset($book->isbn)? $book->isbn : ''}}>
     </div>
     <div class="col-md-6">
-        <label for="quantity">Quantidade</label>
-        <input type="number" class="form-control" name="quantity" id="quantity"  value={{ isset($book->quantity)? $book->quantity : ''}}>
+        <label for="startingAmount">Quantidade Inicial</label>
+        <input type="number" class="form-control" name="startingAmount" id="startingAmount"  value={{ isset($book->startingAmount)? $book->startingAmount : ''}}>
 
     </div>
     <div class="col-md-6">
-        <label for="price">Preço</label>
-        <input type="number" class="form-control" name="price" id="price"  value={{ isset($book->price)? $book->price : ''}}>
+        <label for="purchasePrice">Preço de Compra</label>
+        <input type="number" class="form-control" name="purchasePrice" id="purchasePrice"  value={{ isset($book->purchasePrice)? $book->purchasePrice : ''}}>
+
+    </div>
+    <div class="col-md-6">
+        <label for="salePrice">Preço de Venda</label>
+        <input type="number" class="form-control" name="salePrice" id="salePrice"  value={{ isset($book->salePrice)? $book->salePrice : ''}}>
 
     </div>
 

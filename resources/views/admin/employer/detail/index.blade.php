@@ -39,6 +39,7 @@
                                     <th>Morada</th>
                                     <th>Email</th>
                                     <th>NIF</th>
+                                    <th>Função</th>
 
                                 </tr>
                             </thead>
@@ -50,6 +51,7 @@
                                     <td>{{ $employer->address }}</td>
                                     <td>{{ $employer->email}}</td>
                                     <td>{{ $employer->nif}}</td>
+                                    <td>{{ $employer->role}}</td>
                                 </tr>
                             </tbody>
                         </table>

@@ -59,7 +59,7 @@
                 </div>
 
 
-                <div>
+               {{-- <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
                         <div class="sb-nav-link-icon"><i class="fas fa-role"></i></div>
                        Função
@@ -71,7 +71,7 @@
                             <a class="nav-link" href="{{ route('admin.role.list.index') }}">Listar</a>
                         </nav>
                     </div>
-                </div>
+                </div>--}}
 
 
                 <div>

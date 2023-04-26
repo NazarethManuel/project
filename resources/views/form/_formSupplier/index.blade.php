@@ -24,9 +24,11 @@
 
     </div>
     <div class="col-md-6">
-        <label for="type">Tipo</label>
-        <input type="text" class="form-control" name="type" id="type"  value={{ isset($supplier->type)? $supplier->type : ''}}>
-
+        <label for="type">Tipo de Fornecedor</label>
+        <select class="form-control" name="type" id="type">
+            <option value="Empresa" {{(isset($supplier->role)&& $supplier->type=="Empresa")? 'selected' : '' }}>Empresa</option>
+            <option value="Independente" {{(isset($supplier->role)&& $supplier->type=="Independente"  )? 'selected' : '' }}>Independente</option>
+        </select>
     </div>
 
 </div>

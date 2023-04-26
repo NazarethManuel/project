@@ -20,7 +20,6 @@ class CreateBooksTable extends Migration
             $table->string('publisher', 150);
             $table->string('isbn', 13);
             $table->string('startingAmount');
-            $table->string('finalQuantity');
             $table->string('purchasePrice');
             $table->string('salePrice');
             $table->softDeletes();

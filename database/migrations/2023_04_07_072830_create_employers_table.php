@@ -16,11 +16,12 @@ class CreateEmployersTable extends Migration
             $table->string('address', 150);
             $table->string('email', 150);
             $table->string('nif', 150);
+            $table->string('role', 150);
+
             $table->softDeletes();
             $table->timestamps();
         });
     }
-
 
     public function down()
     {
