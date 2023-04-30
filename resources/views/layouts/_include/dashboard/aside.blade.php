@@ -16,8 +16,8 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="#">Cadastrar</a>
-                            <a class="nav-link" href="#">Listar</a>
+                            <a class="nav-link" href="{{ route('admin.employer.create.index') }}">Cadastrar</a>
+                            <a class="nav-link" href="{{ route('admin.employer.list.index') }}">Listar</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBook" aria-expanded="false" aria-controls="collapseBook">
@@ -57,6 +57,38 @@
                         </nav>
                     </div>
                 </div>
+
+
+                <div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
+                        <div class="sb-nav-link-icon"><i class="fas fa-role"></i></div>
+                       Função
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseRole" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link" href="{{ route('admin.role.create.index') }}">Cadastrar</a>
+                            <a class="nav-link" href="{{ route('admin.role.list.index') }}">Listar</a>
+                        </nav>
+                    </div>
+                </div>
+
+
+                <div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTipePayments" aria-expanded="false" aria-controls="collapseTipePayments">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                       Tipo de Pagamento
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseTipePayments" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link" href="{{ route('admin.typePayment.create.index') }}">Cadastrar</a>
+                            <a class="nav-link" href="{{ route('admin.typePayment.list.index') }}">Listar</a>
+                        </nav>
+                    </div>
+                </div>
+
+
 
                 <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

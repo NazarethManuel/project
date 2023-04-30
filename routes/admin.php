@@ -9,6 +9,17 @@ Route::middleware('auth')->group(function () {
 
 Route::get('admin/home/index', ['as'=>'admin.home.index','uses'=>'Admin\HomeController@index']);
 
+
+//EMPLOYER
+Route::get('admin/employer/list/index', ['as'=>'admin.employer.list.index','uses'=>'Admin\EmployerController@index']);
+Route::get('admin/employer/create/index', ['as'=>'admin.employer.create.index','uses'=>'Admin\EmployerController@create']);
+Route::post('admin/employer/create/store', ['as'=>'admin.employer.create.store','uses'=>'Admin\EmployerController@store']);
+Route::get('admin/employer/show/{id}', ['as'=>'admin.employer.show','uses'=>'Admin\EmployerController@show']);
+Route::get('admin/employer/edit/{id}', ['as'=>'admin.employer.edit.index','uses'=>'Admin\EmployerController@edit']);
+Route::post('admin/employer/update/{id}', ['as'=>'admin.employer.update','uses'=>'Admin\EmployerController@update']);
+Route::get('admin/employer/destroy/{id}', ['as'=>'admin.employer.destroy','uses'=>'Admin\EmployerController@destroy']);
+//END EMPLOYER
+
 //BOOKS
 Route::get('admin/book/list/index', ['as'=>'admin.book.list.index','uses'=>'Admin\BookController@index']);
 Route::get('admin/book/create/index', ['as'=>'admin.book.create.index','uses'=>'Admin\BookController@create']);
@@ -39,6 +50,26 @@ Route::post('admin/costumer/update/{id}', ['as'=>'admin.costumer.update','uses'=
 Route::get('admin/costumer/destroy/{id}', ['as'=>'admin.costumer.destroy','uses'=>'Admin\CostumerController@destroy']);
 //END COSTUMER
 
+//ROLE
+Route::get('admin/role/list/index', ['as'=>'admin.role.list.index','uses'=>'Admin\RoleController@index']);
+Route::get('admin/role/create/index', ['as'=>'admin.role.create.index','uses'=>'Admin\RoleController@create']);
+Route::post('admin/role/create/store', ['as'=>'admin.role.store','uses'=>'Admin\RoleController@store']);
+Route::get('admin/role/show/{id}', ['as'=>'admin.role.show','uses'=>'Admin\RoleController@show']);
+Route::get('admin/role/create/edit/{id}', ['as'=>'admin.role.edit.index','uses'=>'Admin\RoleController@edit']);
+Route::post('admin/role/update/{id}', ['as'=>'admin.role.update','uses'=>'Admin\RoleController@update']);
+Route::get('admin/role/destroy/{id}', ['as'=>'admin.role.destroy','uses'=>'Admin\RoleController@destroy']);
+//END ROLE
+
+//TYPE_PAYMENT
+Route::get('admin/typePayment/list/index', ['as'=>'admin.typePayment.list.index','uses'=>'Admin\TypePaymentController@index']);
+Route::get('admin/typePayment/create/index', ['as'=>'admin.typePayment.create.index','uses'=>'Admin\TypePaymentController@create']);
+Route::post('admin/typePayment/create/store', ['as'=>'admin.typePayment.store','uses'=>'Admin\TypePaymentController@store']);
+Route::get('admin/typePayment/show/{id}', ['as'=>'admin.typePayment.show','uses'=>'Admin\TypePaymentController@show']);
+Route::get('admin/typePayment/create/edit/{id}', ['as'=>'admin.typePayment.edit.index','uses'=>'Admin\TypePaymentController@edit']);
+Route::post('admin/typePayment/update/{id}', ['as'=>'admin.typePayment.update','uses'=>'Admin\TypePaymentController@update']);
+Route::get('admin/typePayment/destroy/{id}', ['as'=>'admin.typePayment.destroy','uses'=>'Admin\TypePaymentController@destroy']);
+//END TYPE_PAYMENT
+
 //BOOK_SUPPLIER
 Route::get('admin/bookSupplier/list/index', ['as'=>'admin.bookSupplier.list.index','uses'=>'Admin\BookSupplierController@index']);
 Route::get('admin/bookSupplier/create/index', ['as'=>'admin.bookSupplier.create.index','uses'=>'Admin\BookSupplierController@create']);
@@ -48,5 +79,15 @@ Route::get('admin/bookSupplier/edit/index/{id}',['as'=>'admin.bookSupplier.edit.
 Route::post('admin/bookSupplier/{id}', ['as'=>'admin.bookSupplier.update','uses'=>'Admin\BookSupplierController@update']);
 Route::get('admin/bookSupplier/destroy/{id}', ['as'=>'admin.bookSupplier.destroy','uses'=>'Admin\BookSupplierController@destroy']);
 //END BOOK_SUPPLIER
+
+//EMPLOYER_ROLE
+Route::get('admin/employerRole/list/index', ['as'=>'admin.employerRole.list.index','uses'=>'Admin\BookSupplierController@index']);
+Route::get('admin/employerRole/create/index', ['as'=>'admin.employerRole.create.index','uses'=>'Admin\BookSupplierController@create']);
+Route::post('admin/employerRole/create/store', ['as'=>'admin.employerRole.store','uses'=>'Admin\BookSupplierController@store']);
+Route::get('admin/employerRole/show/{id}', ['as'=>'admin.employerRole.show','uses'=>'Admin\BookSupplierController@show']);
+Route::get('admin/employerRole/edit/index/{id}',['as'=>'admin.employerRole.edit.index','uses'=>'Admin\BookSupplierController@edit']);
+Route::post('admin/employerRole/{id}', ['as'=>'admin.employerRole.update','uses'=>'Admin\BookSupplierController@update']);
+Route::get('admin/employerRole/destroy/{id}', ['as'=>'admin.employerRole.destroy','uses'=>'Admin\BookSupplierController@destroy']);
+//END EMPLOYER_ROLE
 
 });
