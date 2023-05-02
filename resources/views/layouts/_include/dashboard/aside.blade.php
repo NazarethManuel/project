@@ -59,19 +59,19 @@
                 </div>
 
 
-               {{-- <div>
+               <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
                         <div class="sb-nav-link-icon"><i class="fas fa-role"></i></div>
-                       Função
+                       Vendas
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseRole" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link" href="{{ route('admin.role.create.index') }}">Cadastrar</a>
-                            <a class="nav-link" href="{{ route('admin.role.list.index') }}">Listar</a>
+                            <a class="nav-link" href="{{ route('admin.sale.create.index') }}">Cadastrar</a>
+                            <a class="nav-link" href="{{ route('admin.sale.list.index') }}">Listar</a>
                         </nav>
                     </div>
-                </div>--}}
+                </div>
 
 
                 <div>

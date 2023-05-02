@@ -17,7 +17,7 @@ class SaleController extends Controller
     {
         $sales = Sale::all();
 
-        return view('sales.index', compact('sales'));
+        return view('admin.sale.list.index', compact('sales'));
 
     }
 
@@ -29,7 +29,7 @@ class SaleController extends Controller
         $response['employers'] = Employer::get();
         $response['typePayments'] = TypePayment::get();
         $response['sales'] = Sale::get();
-        return view('sales.create.index',$response);
+        return view('admin.sale.create.index',$response);
 
     }
 
@@ -37,8 +37,8 @@ class SaleController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'quantity' => 'required',
-            'total' => 'required',
+            'quantity' => 'required'|'numeric',
+            'total' => 'required'|'numeric',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
             'fk_employers_id' => 'required',
@@ -66,7 +66,7 @@ class SaleController extends Controller
         $response['employers'] = Employer::get();
         $response['typePayments'] = TypePayment::get();
         $response['sales'] = Sale::find($id);
-        return view('sales.detail.index',$response);
+        return view('sale.detail.index',$response);
 
     }
 
@@ -78,7 +78,7 @@ class SaleController extends Controller
         $response['employers'] = Employer::get();
         $response['typePayments'] = TypePayment::get();
         $response['sales'] = Sale::find($id);
-        return view('sales.edit.index',$response);
+        return view('sale.edit.index',$response);
 
     }
 
@@ -87,8 +87,8 @@ class SaleController extends Controller
     {
 
         $data = $this->validate($request, [
-            'quantity' => 'required',
-            'total' => 'required',
+            'quantity' => 'required'|'numeric',
+            'total' => 'required'|'numeric',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
             'fk_employers_id' => 'required',

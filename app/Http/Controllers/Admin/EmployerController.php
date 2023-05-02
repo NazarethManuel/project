@@ -31,7 +31,7 @@ class EmployerController extends Controller
             'address' => 'required|max:150',
             'email' => 'required|email',
             'nif' => 'required|max:150',
-            'role'=> 'required|max:150'
+            'role'=>'required|in:Administrador,Operador'
         ], [
             'name.required' => 'Digite o Nome do Funcionário',
             'telephone.required' => 'Digite o contacto do Funcionário',
@@ -64,7 +64,7 @@ class EmployerController extends Controller
             'address' => 'required|max:150',
             'email' => 'required|email',
             'nif' => 'required|max:150',
-            'role'=> 'required|max:150'
+            'role'=> 'required|in:Administrador,Operador'
         ], [
             'name.required' => 'Digite o Nome do Funcionário',
             'telephone.required' => 'Digite o contacto do Funcionário',

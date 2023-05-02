@@ -9,11 +9,11 @@
         <div class="container-fluid px-4">
             <div class="col-md-11 ml-5 ">
                 <br>
-                <h3 class="mt-4">Lista de Clientes</h3>
+                <h3 class="mt-4">Lista de Vendas</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Lista de Clientes </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.costumer.create.index') }}">Adicionar Novo Cliente</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.sale.create.index') }}">Adicionar Nova Venda</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -27,7 +27,7 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Lista de Clientes
+                        Lista de Vendas
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">

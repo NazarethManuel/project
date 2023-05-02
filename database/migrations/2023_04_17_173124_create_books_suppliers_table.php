@@ -11,6 +11,7 @@ class CreateBooksSuppliersTable extends Migration
     {
         Schema::create('books_suppliers', function (Blueprint $table) {
             $table->id();
+            
             $table->unsignedBigInteger('fk_books_id');
             $table->foreign('fk_books_id')->references('id')
             ->on('books')->onDelete('CASCADE')->onUpgrade('CASCADE');
@@ -18,6 +19,7 @@ class CreateBooksSuppliersTable extends Migration
             $table->unsignedBigInteger('fk_suppliers_id');
             $table->foreign('fk_suppliers_id') ->references('id')
             ->on('suppliers')->onDelete('CASCADE')->onUpgrade('CASCADE');
+
             $table->softDeletes();
             $table->timestamps();
         });

@@ -28,20 +28,20 @@ class BookController extends Controller
             'title' => 'required|max:150',
             'author' => 'required|max:150',
             'publisher' => ' required|max:150',
-            'isbn' => 'required|max:150',
+            'isbn' => 'required|min:13|max:13',
             'startingAmount' => 'required|numeric',
             'finalQuantity',
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric'
 
-        ],[
-            'title.required'=>'Digite o título do livro',
-            'author.required'=>'Digite o Autor do livro',
-            'publisher.required'=>'Digite a editora do livro',
-            'isbn.required'=>'Digite o isbn do livro',
-            'startingAmount.required'=>'Digite a quantidade de livro',
-            'purchasePrice.required'=>'Digite o preço de compra do livro',
-            'salePrice.required'=>'Digite o preço de venda do livro'
+        ], [
+            'title.required' => 'Digite o título do livro',
+            'author.required' => 'Digite o Autor do livro',
+            'publisher.required' => 'Digite a editora do livro',
+            'isbn.required' => 'Digite o isbn do livro',
+            'startingAmount.required' => 'Digite a quantidade de livro',
+            'purchasePrice.required' => 'Digite o preço de compra do livro',
+            'salePrice.required' => 'Digite o preço de venda do livro'
         ]);
 
         Book::create($response);
@@ -72,14 +72,14 @@ class BookController extends Controller
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric'
 
-        ],[
-            'title.required'=>'Digite o título do livro',
-            'author.required'=>'Digite o Autor do livro',
-            'publisher.required'=>'Digite a editora do livro',
-            'isbn.required'=>'Digite o isbn do livro',
-            'startingAmount.required'=>'Digite a quantidade de livro',
-            'purchasePrice.required'=>'Digite o preço de compra do livro',
-            'salePrice.required'=>'Digite o preço dde venda do livro'
+        ], [
+            'title.required' => 'Digite o título do livro',
+            'author.required' => 'Digite o Autor do livro',
+            'publisher.required' => 'Digite a editora do livro',
+            'isbn.required' => 'Digite o isbn do livro',
+            'startingAmount.required' => 'Digite a quantidade de livro',
+            'purchasePrice.required' => 'Digite o preço de compra do livro',
+            'salePrice.required' => 'Digite o preço dde venda do livro'
         ]);
         Book::find($id)->update($response);
         return redirect()->route('admin.book.list.index')->with('edit', '1');
@@ -94,5 +94,11 @@ class BookController extends Controller
         }
         $record->delete();
         return redirect()->route('admin.book.list.index')->with('destroy', '1');
+    }
+
+    public function getBookById($id)
+    {
+        $books = Book::find($id);
+        return response()->json($books);
     }
 }
