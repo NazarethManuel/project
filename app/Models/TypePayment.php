@@ -13,6 +13,17 @@ class TypePayment extends Model
 
     protected $table = 'type_payments';
     protected $guarded = ['id'];
-
     protected $dates = ['deleted_at'];
+
+    public function book(){
+        return $this->belongsToMany(Book::class,'sales');
+    }
+
+    public function costumer(){
+        return $this->belongsToMany(Costumer::class,'sales');
+    }
+
+    public function employer(){
+        return $this->belongsToMany(Employer::class,'sales');
+    }
 }

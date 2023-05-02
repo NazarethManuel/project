@@ -35,7 +35,8 @@
                             <thead>
                                 <tr>
                                     <th>Nome do cliente</th>
-                                    <th>Cotacto</th>
+                                    <th>Contato</th>
+                                    <th>Tipo de Cliente</th>
 
                                 </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                 <tr>
                                     <td>{{ $costumer->name}}</td>
                                     <td>{{ $costumer->telephone }}</td>
+                                    <td>{{ $costumer->type }}</td>
                                 </tr>
                             </tbody>
                         </table>

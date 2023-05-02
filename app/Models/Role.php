@@ -13,9 +13,6 @@ class Role extends Model
 
     protected $table = 'roles';
     protected $guarded = ['id'];
-    protected $dates = ['deleted_at'];
 
-    public function employer(){
-        return $this->belongsToMany(Employer::class,'employers_roles');
-    }
+    protected $dates = ['deleted_at'];
 }

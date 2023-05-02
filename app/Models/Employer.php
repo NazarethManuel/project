@@ -15,7 +15,16 @@ class Employer extends Model
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 
-    public function role(){
-        return $this->belongsToMany(Role::class,'employers_roles');
+    public function book(){
+        return $this->belongsToMany(Book::class,'sales');
     }
+
+    public function costumer(){
+        return $this->belongsToMany(Costumer::class,'sales');
+    }
+    
+    public function typePayment(){
+        return $this->belongsToMany(typePayment::class,'sales');
+    }
+
 }

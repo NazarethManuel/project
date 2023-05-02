@@ -13,14 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __DIR__.'/auth.php';
 Route::get('/', function () {
-    return view('admin.home.index');
+    return view('auth.login');
 });
+
+
+
+require __DIR__.'/admin.php';
 
 Route::get('/admin/home/index', function () {
     return view('admin.home.index');
-})->middleware(['auth'])->name('index');
+})->middleware(['auth'])->name('admin.home.index');
 
-require __DIR__.'/auth.php';
 
-require __DIR__.'/admin.php';

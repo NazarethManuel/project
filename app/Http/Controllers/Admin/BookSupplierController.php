@@ -74,6 +74,7 @@ class BookSupplierController extends Controller
 
     public function destroy($id)
     {
+
         BookSupplier::find($id)->delete();
         return redirect()->route('admin.bookSupplier.list.index')->with('destroy', '1');
     }
