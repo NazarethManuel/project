@@ -14,11 +14,11 @@
 
     <div class="col-md-6">
         <label for="isbn">ISBN</label>
-        <input type="number" class="form-control fillable" name="isbn" id="isbn" value='' readonly>
+        <input type="number" class="form-control " name="isbn" id="isbn" value='' readonly>
     </div>
     <div class="col-md-6">
         <label for="publisher">Editora</label>
-        <input type="text" class="form-control fillable" name="publisher" id="publisher" value='' readonly>
+        <input type="text" class="form-control " name="publisher" id="publisher" value='' readonly>
     </div>
     <div class="col-md-6">
         <label for="salePrice">Preço Unitário(AKZ)</label>
@@ -31,8 +31,8 @@
     </div>
 
     <div class="col-md-6">
-        <label for="total">Total</label>
-        <input type="number" class="form-control" name="total" id="total" value={{ isset($sales->total)? $sales->total : ''}} readonly>
+        <label for="total">Total (AKZ)</label>
+        <input type="number" class="form-control" name="total" id="total" value={{ isset($sales->total)? $sales->total : ''}}  readonly>
     </div>
 
 

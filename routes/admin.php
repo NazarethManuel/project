@@ -69,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/typePayment/create/edit/{id}', ['as' => 'admin.typePayment.edit.index', 'uses' => 'Admin\TypePaymentController@edit']);
     Route::post('admin/typePayment/update/{id}', ['as' => 'admin.typePayment.update', 'uses' => 'Admin\TypePaymentController@update']);
     Route::get('admin/typePayment/destroy/{id}', ['as' => 'admin.typePayment.destroy', 'uses' => 'Admin\TypePaymentController@destroy']);
+
     //END TYPE_PAYMENT
 
     //SALE
@@ -79,6 +80,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/sale/edit/{id}', ['as' => 'admin.sale.edit.index', 'uses' => 'Admin\SaleController@edit']);
     Route::post('admin/sale/update/{id}', ['as' => 'admin.sale.update', 'uses' => 'Admin\SaleController@update']);
     Route::get('admin/sale/destroy/{id}', ['as' => 'admin.sale.destroy', 'uses' => 'Admin\SaleController@destroy']);
+    Route::post('admin/sale/viewPdf/{id}', ['as' => 'admin.sale.viewPdf', 'uses' => 'Admin\SaleController@viewPdf']);
+    Route::get('admin/sale/exportPdf/{id}', ['as' => 'admin.sale.exportPdf', 'uses' => 'Admin\SaleController@exportPdf']);
     //END SALE
 
 

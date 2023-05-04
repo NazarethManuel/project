@@ -9,6 +9,7 @@ use App\Models\Employer;
 use App\Models\Sale;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
+use PDF;
 
 class SaleController extends Controller
 {
@@ -37,8 +38,8 @@ class SaleController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'quantity' => 'required'|'numeric',
-            'total' => 'required'|'numeric',
+            'quantity' => 'required',
+            'total' => 'required',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
             'fk_employers_id' => 'required',
@@ -46,6 +47,7 @@ class SaleController extends Controller
 
         ],[
             'quantity.required'=>'Adicione a quantidade',
+            'total.required'=>'Qual é o total',
             'fk_books_id.required'=>'Selecione o livro',
             'fk_costumers_id.required'=>'adicione o Cliente',
             'fk_employers_id.required'=>'Selecione o funcionário',
@@ -66,7 +68,7 @@ class SaleController extends Controller
         $response['employers'] = Employer::get();
         $response['typePayments'] = TypePayment::get();
         $response['sales'] = Sale::find($id);
-        return view('sale.detail.index',$response);
+        return view('admin.sale.detail.index',$response);
 
     }
 
@@ -78,7 +80,7 @@ class SaleController extends Controller
         $response['employers'] = Employer::get();
         $response['typePayments'] = TypePayment::get();
         $response['sales'] = Sale::find($id);
-        return view('sale.edit.index',$response);
+        return view('admin.sale.edit.index',$response);
 
     }
 
@@ -87,8 +89,8 @@ class SaleController extends Controller
     {
 
         $data = $this->validate($request, [
-            'quantity' => 'required'|'numeric',
-            'total' => 'required'|'numeric',
+            'quantity' => 'required',
+            'total' => 'required',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
             'fk_employers_id' => 'required',
@@ -112,6 +114,25 @@ class SaleController extends Controller
     {
         Sale::find($id)->delete();
         return redirect()->route('admin.sale.list.index')->with('destroy', '1');
+
+    }
+
+    public function viewPdf($id){
+
+        $response['books'] = Book::get();
+        $response['costumers'] = Costumer::get();
+        $response['employers'] = Employer::get();
+        $response['typePayments'] = TypePayment::get();
+        $response['sales']= Sale::find($id);       ;
+
+        $pdf = PDF::loadview('admin.sale.viewPdf.index', $response)
+        ->setPaper('a4','landscape');
+
+        return $pdf->stream();
+
+    }
+
+    public function exportPdf(){
 
     }
 }
