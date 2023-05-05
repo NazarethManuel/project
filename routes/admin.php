@@ -80,8 +80,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/sale/edit/{id}', ['as' => 'admin.sale.edit.index', 'uses' => 'Admin\SaleController@edit']);
     Route::post('admin/sale/update/{id}', ['as' => 'admin.sale.update', 'uses' => 'Admin\SaleController@update']);
     Route::get('admin/sale/destroy/{id}', ['as' => 'admin.sale.destroy', 'uses' => 'Admin\SaleController@destroy']);
-    Route::post('admin/sale/viewPdf/{id}', ['as' => 'admin.sale.viewPdf', 'uses' => 'Admin\SaleController@viewPdf']);
-    Route::get('admin/sale/exportPdf/{id}', ['as' => 'admin.sale.exportPdf', 'uses' => 'Admin\SaleController@exportPdf']);
+    Route::get('admin/sale/viewPdf/{id}', ['as' => 'admin.sale.viewPdf', 'uses' => 'Admin\SaleController@viewPdf']);
+    Route::post('admin/sale/exportPdf', ['as' => 'admin.sale.exportPdf', 'uses' => 'Admin\SaleController@exportPdf']);
     //END SALE
 
 
@@ -91,7 +91,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/bookSupplier/create/store', ['as' => 'admin.bookSupplier.store', 'uses' => 'Admin\BookSupplierController@store']);
     Route::get('admin/bookSupplier/show/{id}', ['as' => 'admin.bookSupplier.show', 'uses' => 'Admin\BookSupplierController@show']);
     Route::get('admin/bookSupplier/edit/index/{id}', ['as' => 'admin.bookSupplier.edit.index', 'uses' => 'Admin\BookSupplierController@edit']);
-    Route::post('admin/bookSupplier/{id}', ['as' => 'admin.bookSupplier.update', 'uses' => 'Admin\BookSupplierController@update']);
+    Route::post('admin/bookSupplier/update/{id}', ['as' => 'admin.bookSupplier.update', 'uses' => 'Admin\BookSupplierController@update']);
     Route::get('admin/bookSupplier/destroy/{id}', ['as' => 'admin.bookSupplier.destroy', 'uses' => 'Admin\BookSupplierController@destroy']);
     //END BOOK_SUPPLIER
 

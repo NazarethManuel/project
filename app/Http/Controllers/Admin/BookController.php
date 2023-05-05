@@ -88,11 +88,15 @@ class BookController extends Controller
     public function destroy($id)
     {
         $record = Book::find($id);
+
         $exists = BookSupplier::where('fk_books_id', $record->id)->exists();
+
         if ($exists) {
             BookSupplier::where($record['fk_books_id'])->delete();
         }
+
         $record->delete();
+
         return redirect()->route('admin.book.list.index')->with('destroy', '1');
     }
 
