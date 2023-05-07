@@ -29,7 +29,7 @@
                         Livros Cadastrados
                     </div>
                     <div claclsss="card-body">
-                        <table id="datatablesSimple">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Titulo Livro</th>

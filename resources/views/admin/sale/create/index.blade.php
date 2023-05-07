@@ -14,6 +14,7 @@
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
+            
             <hr>
 
             @if ($errors->any())

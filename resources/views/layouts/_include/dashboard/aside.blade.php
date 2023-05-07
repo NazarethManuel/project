@@ -10,8 +10,8 @@
                     </a>
                     <div class="sb-sidenav-menu-heading">Gerir</div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                        Funcionários
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Funcionário
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -22,7 +22,7 @@
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBook" aria-expanded="false" aria-controls="collapseBook">
                         <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                        Livros
+                        Livro
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseBook" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -33,8 +33,8 @@
                     </div>
                 <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSupplier" aria-expanded="false" aria-controls="collapseSupplier">
-                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                        Fornecedores
+                        <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
+                        Fornecedor
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseSupplier" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -47,7 +47,7 @@
                 <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCostumer" aria-expanded="false" aria-controls="collapseCostumer">
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                        Clientes
+                        Cliente
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseCostumer" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -58,25 +58,9 @@
                     </div>
                 </div>
 
-
-               <div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
-                        <div class="sb-nav-link-icon"><i class="fas fa-role"></i></div>
-                       Vendas
-                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                    </a>
-                    <div class="collapse" id="collapseRole" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link" href="{{ route('admin.sale.create.index') }}">Cadastrar</a>
-                            <a class="nav-link" href="{{ route('admin.sale.list.index') }}">Listar</a>
-                        </nav>
-                    </div>
-                </div>
-
-
                 <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTipePayments" aria-expanded="false" aria-controls="collapseTipePayments">
-                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        <div class="sb-nav-link-icon"><i class="fas fa-bank"></i></div>
                        Tipo de Pagamento
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
@@ -88,18 +72,30 @@
                     </div>
                 </div>
 
-
-
                 <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                       Livros e Fornecedores
+                        <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
+                       Livro e Fornecedor
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                             <a class="nav-link" href="{{ route('admin.bookSupplier.create.index') }}">Cadastrar</a>
                             <a class="nav-link" href="{{ route('admin.bookSupplier.list.index') }}">Listar</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
+                        <div class="sb-nav-link-icon"><i class="fas fa-shop"></i></div>
+                       Venda
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseRole" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link" href="{{ route('admin.sale.create.index') }}">Adicionar</a>
+                            <a class="nav-link" href="{{ route('admin.sale.list.index') }}">Listar</a>
                         </nav>
                     </div>
                 </div>

@@ -1,11 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-<<<<<<< HEAD
-            
-=======
           
->>>>>>> 0f94ccad1870fdcab7210b4925626a0ddef1908d
         </x-slot>
 
         <!-- Validation Errors -->
