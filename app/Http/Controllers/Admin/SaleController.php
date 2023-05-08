@@ -115,9 +115,16 @@ class SaleController extends Controller
         return view('admin.sale.viewPdf.index', $response);
     }
 
-    public function search(Request $request)
+    public function exportPdf()
     {
-        $Init = $request->input('dateInit');
-        echo $Init;
+        $response['book'] = Book::get();
+        $response['costumer'] = Costumer::get();
+        $response['employer'] = Employer::get();
+        $response['typePayment'] = TypePayment::get();
+        $response['sales']= Sale::all();
+        $pdf= PDF::loadView('admin.sale.viewPdf.index',$response)
+        ->setPaper('a4','portrait');
+
+        return $pdf->download('response.pdf');
     }
 }

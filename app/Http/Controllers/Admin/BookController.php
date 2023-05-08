@@ -92,10 +92,17 @@ class BookController extends Controller
         $exists = BookSupplier::where('fk_books_id', $record->id)->exists();
 
         if ($exists) {
+
+            if($record->supplier->count()>0){
+
+                return redirect()->back()->with('deleteBook', '1');
+
+            }
+
             BookSupplier::where($record['fk_books_id'])->delete();
         }
 
-        $record->delete();
+
 
         return redirect()->route('admin.book.list.index')->with('destroy', '1');
     }

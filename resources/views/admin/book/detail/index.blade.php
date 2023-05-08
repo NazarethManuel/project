@@ -47,8 +47,8 @@
                                     <td>{{ $books->author }}</td>
                                     <td>{{ $books->publisher }}</td>
                                     <td>{{ $books->isbn }}</td>
-                                    <td>{{ $books->quantity }}</td>
-                                    <td>{{ $books->price }}</td>
+                                    <td>{{ $books->startingAmount}}</td>
+                                    <td>{{ $books->salePrice }}</td>
                                 </tr>
 
 

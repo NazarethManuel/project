@@ -37,7 +37,7 @@
                                     <th>Titulo Livro</th>
                                     <th>Autor</th>
                                     <th>Editora</th>
-                                    <th>Preço</th>
+                                    <th>Preço de Venda(AKZ)</th>
                                     <th>Acção</th>
 
                                 </tr>
@@ -48,7 +48,7 @@
                                     <td>{{ $books->title }}</td>
                                     <td>{{ $books->author }}</td>
                                     <td>{{ $books->publisher }}</td>
-                                    <td>{{ $books->price }}</td>
+                                    <td>{{ $books->salePrice }}</td>
                                     <td>
                                         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                                             <li class="nav-item dropdown">

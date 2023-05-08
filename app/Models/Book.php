@@ -17,19 +17,28 @@ class Book extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function supplier(){
-        return $this->belongsToMany(Supplier::class,'books_suppliers');
+    public function supplier()
+    {
+        return $this->belongsToMany(
+            Supplier::class,
+            'books_suppliers',
+            'fk_books_id',
+            'fk_suppliers_id'
+        );
     }
 
-    public function costumer(){
-        return $this->belongsToMany(Costumer::class,'sales');
+    public function costumer()
+    {
+        return $this->belongsToMany(Costumer::class, 'sales');
     }
 
-    public function employer(){
-        return $this->belongsToMany(Employer::class,'sales');
+    public function employer()
+    {
+        return $this->belongsToMany(Employer::class, 'sales');
     }
 
-    public function typePayment(){
-        return $this->belongsToMany(typePayment::class,'sales');
+    public function typePayment()
+    {
+        return $this->belongsToMany(typePayment::class, 'sales');
     }
 }

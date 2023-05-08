@@ -39,11 +39,11 @@
     })
 </script>
 
-@elseif(session('candidates'))
+@elseif(session('deleteBook'))
 <script>
     Swal.fire({
-        icon: 'info',
-        title: 'Não consta na lista por favor cadastre !',
+        icon: 'error',
+        title: 'Este livro nao pode ser deletado !',
         showConfirmButton: true
     })
 </script>
