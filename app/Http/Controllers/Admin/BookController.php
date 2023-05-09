@@ -102,8 +102,6 @@ class BookController extends Controller
             BookSupplier::where($record['fk_books_id'])->delete();
         }
 
-
-
         return redirect()->route('admin.book.list.index')->with('destroy', '1');
     }
 

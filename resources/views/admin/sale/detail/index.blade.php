@@ -9,10 +9,10 @@
         <div class="container-fluid px-4">
             <div class="col-md-11 ml-5 ">
                 <br>
-                <h3 class="mt-4">Detalhe das Vendas</h3>
+                <h3 class="mt-4">Lista de Vendas</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Detalhe da Venda </li>
+                    <li class="breadcrumb-item active">Detalhe ds Venda </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.sale.list.index') }}">Lista de Vendas</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
