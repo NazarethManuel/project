@@ -9,7 +9,7 @@ use App\Models\Employer;
 use App\Models\Sale;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class SaleController extends Controller
 {
@@ -117,14 +117,10 @@ class SaleController extends Controller
 
     public function exportPdf()
     {
-        $response['book'] = Book::get();
-        $response['costumer'] = Costumer::get();
-        $response['employer'] = Employer::get();
-        $response['typePayment'] = TypePayment::get();
-        $response['sales']= Sale::all();
-        $pdf= PDF::loadView('admin.sale.viewPdf.index',$response)
-        ->setPaper('a4','portrait');
+      ;
 
-        return $pdf->download('response.pdf');
-    }
+        $pdf = Pdf::loadView('teste');
+        return $pdf->download();
+
+           }
 }

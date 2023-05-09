@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Costumer;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class CostumerController extends Controller
@@ -73,7 +74,22 @@ class CostumerController extends Controller
 
     public function destroy($id)
     {
-        Costumer::find($id)->delete();
+        $record =  Costumer::find($id);
+
+        //Sale_relation
+        $exists = Sale::where('fk_costumers_id', $record->id)->exists();
+
+        if ($exists) {
+
+            if($record->book->count()>0 && $record->employer->count()>0 && $record->typePayment->count()>0){
+
+                return redirect()->back()->with('deleteBook', '1');
+
+            }
+
+            Sale::where($record['fk_costumers_id'])->delete();
+        }
+
         return redirect()->route('admin.costumer.list.index')->with('destroy', '1');
 
     }

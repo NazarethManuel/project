@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Employer;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class EmployerController extends Controller
@@ -81,7 +82,21 @@ class EmployerController extends Controller
 
     public function destroy($id)
     {
-        Employer::find($id)->delete();
+        $record=Employer::find($id);
+
+        //Sale_relation
+        $exists = Sale::where('fk_costumers_id', $record->id)->exists();
+
+        if ($exists) {
+
+            if($record->book->count()>0 && $record->costumer->count()>0 && $record->typePayment->count()>0){
+
+                return redirect()->back()->with('deleteBook', '1');
+
+            }
+
+            Sale::where($record['fk_employers_id'])->delete();
+        }
         return redirect()->route('admin.employer.list.index')->with('destroy', '1');
     }
 }

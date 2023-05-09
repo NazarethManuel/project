@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sale;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
 
@@ -65,7 +66,21 @@ class TypePaymentController extends Controller
 
     public function destroy($id)
     {
-        TypePayment::find($id)->delete();
+       $record = TypePayment::find($id);
+
+       //Sale_relation
+       $exists = Sale::where('fk_typePayments_id', $record->id)->exists();
+
+       if ($exists) {
+
+           if($record->book->count()>0 && $record->costumer->count()>0 && $record->employer->count()>0){
+
+               return redirect()->back()->with('deleteBook', '1');
+
+           }
+
+           Sale::where($record['fk_typePayments_id'])->delete();
+       }
         return redirect()->route('admin.typePayment.list.index')->with('destroy', '1');
 
     }

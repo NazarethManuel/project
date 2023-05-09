@@ -15,16 +15,35 @@ class Employer extends Model
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 
-    public function book(){
-        return $this->belongsToMany(Book::class,'sales');
+
+
+    public function book()
+    {
+        return $this->belongsToMany(
+            Book::class,
+             'sales',
+             'fk_employers_id',
+             'fk_books_id'
+            );
     }
 
-    public function costumer(){
-        return $this->belongsToMany(Costumer::class,'sales');
-    }
-    
-    public function typePayment(){
-        return $this->belongsToMany(typePayment::class,'sales');
+    public function costumer()
+    {
+        return $this->belongsToMany(
+            Costumer::class,
+             'sales',
+             'fk_employers_id',
+             'fk_costumers_id'
+            );
     }
 
+    public function typePayment()
+    {
+        return $this->belongsToMany(
+            TypePayment::class,
+             'sales',
+             'fk_employers_id',
+             'fk_typePayments_id'
+            );
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\BookSupplier;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -89,6 +90,7 @@ class BookController extends Controller
     {
         $record = Book::find($id);
 
+        //BookSupplier_relation
         $exists = BookSupplier::where('fk_books_id', $record->id)->exists();
 
         if ($exists) {
@@ -102,8 +104,20 @@ class BookController extends Controller
             BookSupplier::where($record['fk_books_id'])->delete();
         }
 
+        //Sale_relation
+        $exists = Sale::where('fk_books_id', $record->id)->exists();
+        if ($exists) {
+
+            if($record->costumer->count()>0 && $record->employer->count()>0 && $record->typePayment->count()>0 ){
+
+                return redirect()->back()->with('deleteBook', '1');
+            }
+            sale::where($record['fk_books_id'])->delete();
+        }
+
         return redirect()->route('admin.book.list.index')->with('destroy', '1');
     }
+
 
     public function getBookById($id)
     {

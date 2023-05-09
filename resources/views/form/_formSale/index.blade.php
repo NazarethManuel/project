@@ -93,7 +93,6 @@
                 , url: "/admin/book/getBookById/" + id
                 , type: "GET"
                 , success: function(data) {
-                    console.log(data);
                     $('#isbn').val(data.isbn);
                     $('#publisher').val(data.publisher);
                     $('#salePrice').val(data.salePrice);

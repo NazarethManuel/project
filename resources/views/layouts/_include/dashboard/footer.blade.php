@@ -43,7 +43,7 @@
 <script>
     Swal.fire({
         icon: 'error',
-        title: 'Este livro nao pode ser deletado !',
+        title: 'Este item não pode ser eliminado, antes elimine as suas ligações!',
         showConfirmButton: true
     })
 </script>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\BookSupplier;
-use App\Models\Sale;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 
@@ -84,13 +83,19 @@ class SupplierController extends Controller
     {
         $record = Supplier::find($id);
 
-        $exists = BookSupplier::where('fk_suppliers_id', $record->id)->exists();
+          //BookSupplier_relation
+          $exists = BookSupplier::where('fk_suppliers_id', $record->id)->exists();
 
-        if ($exists) {
-            //BookSupplier::where($record['fk_suppliers_id'])->delete();
-            echo $exists;
-        }
-        //$record->delete();
-        //return redirect()->route('admin.supplier.list.index')->with('destroy', '1');
+          if ($exists) {
+
+              if($record->book->count()>0){
+
+                  return redirect()->back()->with('deleteBook', '1');
+
+              }
+
+              BookSupplier::where($record['fk_suppliers_id'])->delete();
+          }
+        return redirect()->route('admin.supplier.list.index')->with('destroy', '1');
     }
 }
