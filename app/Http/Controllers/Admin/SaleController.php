@@ -10,14 +10,14 @@ use App\Models\Sale;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 class SaleController extends Controller
 {
 
     public function index()
     {
         $sales = Sale::all();
-
         return view('admin.sale.list.index', compact('sales'));
     }
 
@@ -109,18 +109,11 @@ class SaleController extends Controller
         return redirect()->route('admin.sale.list.index')->with('destroy', '1');
     }
 
-    public function viewPdf($id)
+    public function viewPdf()
     {
-        $response['sales'] = Sale::find($id);
-        return view('admin.sale.viewPdf.index', $response);
+        $response['sales'] = Sale::get();
+        $pdf = Pdf::loadView('admin.sale.viewPdf.index');
+        return $pdf->stream('invoice.pdf');
+
     }
-
-    public function exportPdf()
-    {
-      ;
-
-        $pdf = Pdf::loadView('teste');
-        return $pdf->download();
-
-           }
 }

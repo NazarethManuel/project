@@ -6,7 +6,7 @@
                 <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                 </a>
-            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
         </x-slot>
 
         <!-- Session Status -->

@@ -32,7 +32,7 @@
 
     <div class="col-md-6">
         <label for="total">Total (AKZ)</label>
-        <input type="number" class="form-control" readonly name="total" id="total" value={{ isset($sales->total)? $sales->total : ''}}  readonly>
+        <input type="number" class="form-control" readonly name="total" id="total" value={{ isset($sales->total)? $sales->total : ''}} >
     </div>
 
 
