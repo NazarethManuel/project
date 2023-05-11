@@ -30,7 +30,8 @@ class Book extends Model
     public function costumer()
     {
         return $this->belongsToMany(
-            Costumer::class, 'sales',
+            Costumer::class,
+            'sales',
             'fk_books_id',
             'fk_costumers_id'
         );
@@ -40,19 +41,19 @@ class Book extends Model
     {
         return $this->belongsToMany(
             Employer::class,
-             'sales',
-             'fk_books_id',
-             'fk_employers_id'
-            );
+            'sales',
+            'fk_books_id',
+            'fk_employers_id'
+        );
     }
 
     public function typePayment()
     {
         return $this->belongsToMany(
             TypePayment::class,
-             'sales',
-             'fk_books_id',
-             'fk_typePayments_id'
-            );
+            'sales',
+            'fk_books_id',
+            'fk_typePayments_id'
+        );
     }
 }

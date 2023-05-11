@@ -24,119 +24,125 @@
                 {{--<div class="row">
 
                     <form action="{{ route('admin.sale.search') }}">
-                        @csrf
+                @csrf
 
-                        <div class="col-md-3">
-                            <label for="name">De:</label>
-                            <input type="date" class="form-control form-control-sm" name="dateInit" required>
-                        </div>
+                <div class="col-md-3">
+                    <label for="name">De:</label>
+                    <input type="date" class="form-control form-control-sm" name="dateInit" required>
+                </div>
 
-                        <div class="col-md-3">
-                            <label for="name">Á:</label>
-                            <input type="date" class="form-control form-control-sm" name="dateEnd">
-                        </div>
+                <div class="col-md-3">
+                    <label for="name">Á:</label>
+                    <input type="date" class="form-control form-control-sm" name="dateEnd">
+                </div>
 
-                        <div class="col-md-3">
-                            <label for="name"></label>
-                            <button type="button" class="btn btn-success btn-sm"><a href="{{ route('admin.sale.search') }}">Pesquisar</a></button>
-                        </div>
-                    </form>
+                <div class="col-md-3">
+                    <label for="name"></label>
+                    <button type="button" class="btn btn-success btn-sm"><a href="{{ route('admin.sale.search') }}">Pesquisar</a></button>
+                </div>
+                </form>
 
-                </div>--}}
-
-
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active"></li>
-                </ol>
-
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Lista de Vendas
-                    </div>
-                    <div class="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>Nome do Cliente</th>
-                                    <th>Nome do Livro</th>
-                                    <th>Preço Unitário</th>
-                                    <th>Quantidade</th>
-                                    <th>Total</th>
-                                    <th>Funcionário</th>
-                                    <th>Acção</th>
-
-                                </tr>
+            </div>--}}
 
 
-                            </thead>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active"></li>
+            </ol>
 
-                            <tbody>
-                                @foreach ($sales as $sale)
-                                <tr>
-                                    <td>{{ $sale->costumer->name }}</td>
-                                    <td>{{ $sale->book->title }}</td>
-                                    <td>{{ $sale->book->salePrice }}</td>
-                                    <td>{{ $sale->quantity }}</td>
-                                    <td>{{ $sale->total }}</td>
-                                    <td>{{ $sale->employer->name }}</td>
-                                    <td>
-                                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas  fa-fw"></i>
-                                                </a>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Lista de Vendas
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nome do Cliente</th>
+                                <th>Nome do Livro</th>
+                                <th>Preço Unitário</th>
+                                <th>Quantidade</th>
+                                <th>Total</th>
+                                <th>Funcionário</th>
+                                <th>Acção</th>
 
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            </tr>
 
-                                                    <li>
-                                                        <form action="{{ route('admin.sale.viewPdf', $sale->id)}}" method="post">
-                                                            @csrf
-                                                            <a href="{{ route('admin.sale.viewPdf', $sale->id)}}" class="dropdown-item" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-receipt" viewBox="0 0 16 16">
-                                                                <path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"/>
-                                                                <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
-                                                              </svg><span class="text-second"> Fatura</span>
-                                                            </a>
-                                                        </form>
 
-                                                    </li>
+                        </thead>
 
-                                                    <li>
-                                                        <a href="{{route('admin.sale.edit.index',$sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                                            </svg><span class="text-primary"> Editar</span>
-                                                        </a>
-                                                    </li>
+                        <tbody>
+                            @foreach ($sales as $sale)
+                            <tr>
+                                <td>{{ $sale->costumer->name }}</td>
+                                <td>{{ $sale->book->title }}</td>
+                                <td>{{ $sale->book->salePrice }}</td>
+                                <td>{{ $sale->quantity }}</td>
+                                <td>{{ $sale->total }}</td>
+                                <td>{{ $sale->employer->name }}</td>
+                                <td>
+                                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas  fa-fw"></i>
+                                            </a>
 
-                                                    <li>
-                                                        <a href="{{ route('admin.sale.show', $sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                                <li>
+                                                    <a href="{{ route('admin.sale.viewPdf', $sale->id)}}" class="dropdown-item" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-receipt" viewBox="0 0 16 16">
+                                                            <path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z" />
+                                                            <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
+                                                        </svg><span class="text-second"> Fatura</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+                                                    <a href="{{ route('admin.sale.exportPdf', $sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                                      </svg><span class="text-second"> Download</span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+                                                    <a href="{{route('admin.sale.edit.index',$sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                                        </svg><span class="text-primary"> Editar</span>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="{{ route('admin.sale.show', $sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                                                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                                         </svg><span class="text-second"> Detalhe</span>
-                                                        </a>
-                                                    </li>
+                                                    </a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="{{ route('admin.sale.destroy', $sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                <li>
+                                                    <a href="{{ route('admin.sale.destroy', $sale->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                                             <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                                        </svg> <span class="text-danger">  Eliminar</span>
-                                                        </a>
-                                                    </li>
+                                                        </svg> <span class="text-danger"> Eliminar</span>
+                                                    </a>
+                                                </li>
 
 
 
 
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </main>
-    @endsection
+</div>
+</main>
+@endsection

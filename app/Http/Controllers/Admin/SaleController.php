@@ -10,8 +10,6 @@ use App\Models\Sale;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Str;
 class SaleController extends Controller
 {
 
@@ -109,11 +107,19 @@ class SaleController extends Controller
         return redirect()->route('admin.sale.list.index')->with('destroy', '1');
     }
 
-    public function viewPdf()
+    public function viewPdf($id)
     {
-        $response['sales'] = Sale::get();
-        $pdf = Pdf::loadView('admin.sale.viewPdf.index');
-        return $pdf->stream('invoice.pdf');
+        $response['sales'] = Sale::find($id);
+        $pdf = Pdf::loadView('admin.sale.viewPdf.index', $response)
+            ->setPaper('a4', 'portrait');
+        return $pdf->stream();
+    }
+    public function exportPdf($id)
+    {
 
+        $response['sales'] = Sale::find($id);
+        $pdf = Pdf::loadView('admin.sale.exportPdf.index', $response)
+            ->setPaper('a4', 'portrait');
+        return $pdf->download('index.pdf');
     }
 }

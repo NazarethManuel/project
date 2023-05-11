@@ -27,28 +27,23 @@
         }
 
         .content {
-           font-size: 14px margin-top: 5px;
+            font-size: 14px margin-top: 5px;
             margin-bottom: 5px
         }
-            </style>
+
+    </style>
 </head>
 <body>
 
-    <div class="container mt-5 mb-3" >
+    <div class="container mt-5 mb-3">
 
         <div class="row d-flex justify-content-center">
             <div class="col-md-8">
-                <div class="card" style="width: 10rem;">
-                    <img src="{{ public_path("/books/assets/img/book.png") }}"  width="100" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">LuziAlf Lda </h5>
-                        <br>
-                        <p class="card-text">NIF:009456664</p>
-                    </div>
+                <br>
+                <div class="d-flex flex-row p-2"> <img src="{{ public_path("/books/assets/img/book.png") }}" width="48">
+
+                    <div class="d-flex flex-column"> <span class="font-weight-bold">LuziAlf Lda </span>  <small><br> NIF: <br> 009456664</small> </div>
                 </div>
-
-
-
                 <hr>
                 <div class="table-responsive p-2">
                     <table class="table table-borderless">
@@ -91,13 +86,13 @@
                         <tbody>
                             <tr class="add">
                                 <td></td>
-                                <td>Preço Unitário(AKZ)</td>
+                                <td >Preço Unitário(AKZ)</td>
                                 <td>Quantidade</td>
                             </tr>
                             <tr class="content">
                                 <td></td>
-                                <td>{{ $sales->book->salePrice }}</td>
-                                <td>{{ $sales->quantity }}</td>
+                                <td >{{ $sales->book->salePrice }}</td>
+                                <td >{{ $sales->quantity }}</td>
                             </tr>
                         </tbody>
                     </table>
