@@ -82,7 +82,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/sale/destroy/{id}', ['as' => 'admin.sale.destroy', 'uses' => 'Admin\SaleController@destroy']);
     Route::get('admin/sale/viewPdf/{id}', ['as' => 'admin.sale.viewPdf', 'uses' => 'Admin\SaleController@viewPdf']);
     Route::get('admin/sale/exportPdf/{id}', ['as' => 'admin.sale.exportPdf', 'uses' => 'Admin\SaleController@exportPdf']);
-    Route::get('admin/sale/search', ['as' => 'admin.sale.search', 'uses' => 'Admin\SaleController@search']);
+    Route::post('admin/sale/search', ['as' => 'admin.sale.search', 'uses' => 'Admin\SaleController@search']);
     //END SALE
 
 

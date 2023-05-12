@@ -38,16 +38,14 @@
 
         <div class="row d-flex justify-content-center">
             <div class="col-md-8">
-                <div class="card" style="width: 10rem;">
-                    <img src="{{ public_path("/books/assets/img/book.png") }}"  width="100" alt="...">
+                <div class="card" style="width: 12rem;">
+                    <img src="{{ public_path("/books/assets/img/book.png") }}" class="rounded float-start" width="100" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">LuziAlf Lda </h5>
+                        <h5 class="card-title text-start">LuziAlf Lda </h5>
                         <br>
-                        <p class="card-text">NIF:009456664</p>
+                        <p class="card-text text-start">NIF:009456664</p>
                     </div>
                 </div>
-
-
 
                 <hr>
                 <div class="table-responsive p-2">

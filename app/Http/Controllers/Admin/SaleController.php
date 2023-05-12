@@ -10,6 +10,8 @@ use App\Models\Sale;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Str;
+
 class SaleController extends Controller
 {
 
@@ -121,5 +123,18 @@ class SaleController extends Controller
         $pdf = Pdf::loadView('admin.sale.exportPdf.index', $response)
             ->setPaper('a4', 'portrait');
         return $pdf->download('index.pdf');
+    }
+    public function search(Request $request)
+    {
+        $Init = $request->input('dateInit');
+        $End = $request->input('dateEnd');
+        $sales = Sale::whereDate('created_at', '>=', $Init)->whereDate('created_at', '<=', $End)->get();
+        if ($Init > $End) {
+            return "Nao Pode";
+        }
+        // $pdf = Pdf::loadView('admin.sale.exportPdf.index', compact('Init', 'End', 'sales'))
+        //     ->setPaper('a4', 'portrait')
+        //     ->save(public_path('report' . Str::random("10") . 'pdf'));
+        // //return view('admin.sale.list.index', compact('sales'));
     }
 }
