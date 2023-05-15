@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,41 +43,44 @@
                 <br>
                 <div class="d-flex flex-row p-2"> <img src="{{ public_path("/books/assets/img/book.png") }}" width="48">
 
-                    <div class="d-flex flex-column"> <span class="font-weight-bold">LuziAlf Lda </span>  <small><br> NIF: <br> 009456664</small> </div>
+                    <div class="d-flex flex-column"> <span class="font-weight-bold">LuziAlf Lda </span> <small><br> NIF: <br> 009456664</small> </div>
                 </div>
-
                 <hr>
                 <div class="table-responsive p-2">
                     <table class="table table-borderless">
                         <tbody>
+
                             <tr class="add">
                                 <td> Livraria LuziAlf Lda </td>
-                                <td>Fatura do Cliente</td>
+                                <td>Relatório de Vendas</td>
                             </tr>
                             <tr class="content">
                                 <td class="font-weight-bold">Endereço:<br>Ingombota, Luanda <br>Angola</td>
-                                <td class="font-weight-bold">Nome do(a) Cliente: <br>{{$sales->costumer->name }} <br> Fatura nº{{ $sales->id}}</td>
                             </tr>
-                        </tbody>
                     </table>
                 </div>
                 <hr>
                 <div class="products p-2">
                     <table class="table table-borderless">
                         <tbody>
+
                             <tr class="add">
                                 td></td>
+                                
                                 <td>Nome do Livro</td>
                                 <td>ISBN</td>
                                 <td>Editora</td>
                             </tr>
+                            @foreach ($sales as $sale)
                             <tr class="content">
+
                                 td></td>
-                                <td>{{ $sales->book->title }}</td>
-                                <td>{{ $sales->book->isbn }}</td>
-                                <td>{{ $sales->book->publisher }}</td>
+                                <td>{{ $sale->book->title }}</td>
+                                <td>{{ $sale->book->isbn }}</td>
+                                <td>{{ $sale->book->publisher }}</td>
 
                             </tr>
+                            @endforeach
 
                         </tbody>
                     </table>
@@ -90,11 +94,13 @@
                                 <td>Preço Unitário(AKZ)</td>
                                 <td>Quantidade</td>
                             </tr>
+                            @foreach ($sales as $sale)
                             <tr class="content">
                                 <td></td>
-                                <td>{{ $sales->book->salePrice }}</td>
-                                <td>{{ $sales->quantity }}</td>
+                                <td>{{ $sale->book->salePrice }}</td>
+                                <td>{{ $sale->quantity }}</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -108,12 +114,14 @@
                                 <td>Tipo de Pagamento</td>
                                 <td class="text-center">Total Pago(AKZ)</td>
                             </tr>
+                            @foreach ($sales as $sale)
                             <tr class="content">
                                 <td></td>
-                                <td>{{ $sales->employer->name }}</td>
-                                <td>{{ $sales->typePayment->type }}</td>
-                                <td class="text-center">{{ $sales->total }}</td>
+                                <td>{{ $sale->employer->name }}</td>
+                                <td>{{ $sale->typePayment->type }}</td>
+                                <td class="text-center">{{ $sale->total }}</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -130,6 +138,8 @@
                         </tbody>
                     </table>
                 </div>
+
+
 
 
             </div>

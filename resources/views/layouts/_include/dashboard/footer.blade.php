@@ -66,11 +66,11 @@
     })
 </script>
 
-@elseif(session('erro_students'))
+@elseif(session('invalid_Date'))
 <script>
     Swal.fire({
         icon: 'error',
-        title: 'Já esta cadastrado nesta turma e curso!',
+        title: 'Data Inválida',
         showConfirmButton: true
     })
 </script>

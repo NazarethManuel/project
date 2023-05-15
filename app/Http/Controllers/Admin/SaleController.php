@@ -130,11 +130,14 @@ class SaleController extends Controller
         $End = $request->input('dateEnd');
         $sales = Sale::whereDate('created_at', '>=', $Init)->whereDate('created_at', '<=', $End)->get();
         if ($Init > $End) {
-            return "Nao Pode";
+            return redirect()->route('admin.sale.list.index', compact('sales'))->with('invalid_Date', '1');
         }
-        // $pdf = Pdf::loadView('admin.sale.exportPdf.index', compact('Init', 'End', 'sales'))
-        //     ->setPaper('a4', 'portrait')
-        //     ->save(public_path('report' . Str::random("10") . 'pdf'));
-        // //return view('admin.sale.list.index', compact('sales'));
+
+         $pdf = Pdf::loadView('admin.sale.report.index', compact('Init', 'End', 'sales'))
+             ->setPaper('a4', 'portrait')
+             ->save(public_path('report' . Str::random("10") . 'pdf'));
+        // return view('admin.sale.list.index', compact('sales'));
+
+        return $pdf->download('index.pdf');
     }
 }
