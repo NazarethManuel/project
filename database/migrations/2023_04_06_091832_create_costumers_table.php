@@ -6,27 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCostumersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('costumers', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 150);
+            $table->string('name', 150);
             $table->string('telephone', 150);
+            $table->string('type', 150);
             $table->softDeletes();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('costumers');

@@ -19,18 +19,14 @@ class CreateBooksTable extends Migration
             $table->string('author', 150);
             $table->string('publisher', 150);
             $table->string('isbn', 13);
-            $table->string('quantity');
-            $table->string('price');
+            $table->string('startingAmount');
+            $table->string('purchasePrice');
+            $table->string('salePrice');
             $table->softDeletes();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('books');
