@@ -134,9 +134,8 @@ class SaleController extends Controller
         }
 
          $pdf = Pdf::loadView('admin.sale.report.index', compact('Init', 'End', 'sales'))
-             ->setPaper('a4', 'portrait')
-             ->save(public_path('report' . Str::random("10") . 'pdf'));
-
+             ->setPaper('a4', 'portrait');
+             //->save(public_path('report' . Str::random("10") . 'pdf'));
 
         return $pdf->download('Relatório.pdf');
     }

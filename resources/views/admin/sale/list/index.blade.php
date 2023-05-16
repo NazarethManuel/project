@@ -44,7 +44,7 @@
 
                             <div class="col-md-2" style="padding: 20px">
                                 <div class="mb-2">
-                                    <button class="btn btn-success shadow"><i class="fas fa-search"></i> Pesquisar</button>
+                                    <button class="btn btn-success "><i class="fas fa-search"></i> Pesquisar</button>
                                 </div>
                             </div>
 
