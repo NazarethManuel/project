@@ -42,10 +42,11 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-1">
-                                    <label for="name"></label>
-                                    <button type="submit" class="btn btn-success btn-sm">Pesquisar</button>
+                            <div class="col-md-2" style="padding: 20px">
+                                <div class="mb-2">
+                                    <button class="btn btn-success shadow"><i class="fas fa-search"></i> Pesquisar</button>
                                 </div>
+                            </div>
 
                             </div>
                         </div>

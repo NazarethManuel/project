@@ -122,7 +122,7 @@ class SaleController extends Controller
         $response['sales'] = Sale::find($id);
         $pdf = Pdf::loadView('admin.sale.exportPdf.index', $response)
             ->setPaper('a4', 'portrait');
-        return $pdf->download('index.pdf');
+        return $pdf->download('Fatura.pdf');
     }
     public function search(Request $request)
     {
@@ -136,8 +136,8 @@ class SaleController extends Controller
          $pdf = Pdf::loadView('admin.sale.report.index', compact('Init', 'End', 'sales'))
              ->setPaper('a4', 'portrait')
              ->save(public_path('report' . Str::random("10") . 'pdf'));
-        // return view('admin.sale.list.index', compact('sales'));
 
-        return $pdf->download('index.pdf');
+
+        return $pdf->download('Relatório.pdf');
     }
 }
