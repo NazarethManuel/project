@@ -1,12 +1,13 @@
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-               
-            </a>
+       
             <x-slot name="logo">
-
+                <a href="/">
+                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                </a>
             </x-slot>
+
+
 
             <!-- Validation Errors -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -15,9 +16,6 @@
                 <div class="container-fluid h-custom">
                     <div class="row d-flex justify-content-center align-items-center w-200 h-100">
 
-                        <div class="col-md-9 col-lg-6 col-xl-5">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
-                        </div>
 
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
