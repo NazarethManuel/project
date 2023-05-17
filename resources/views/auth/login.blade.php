@@ -2,6 +2,9 @@
     <x-auth-card>
         <x-slot name="logo">
             <x-slot name="logo">
+                <a href="/">
+                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                </a>
 
             </x-slot>
 
@@ -10,13 +13,14 @@
 
             <!-- Validation Errors -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
             <section class="vh-100">
                 <div class="container-fluid h-custom">
                     <div class="row d-flex justify-content-center align-items-center w-200 h-100">
 
-                        <div class="col-md-9 col-lg-6 col-xl-5">
+                       {{-- <div class="col-md-9 col-lg-6 col-xl-5">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid" alt="Sample image">
-                        </div>
+                        </div>--}}
 
 
                         <form method="POST" action="{{ route('login') }}">
@@ -47,7 +51,7 @@
                             <div class="flex items-center justify-end mt-4">
                                 @if (Route::has('password.request'))
                                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                    {{ __('Esqueceu a palavra-Passe?') }}
+                                    {{ __('Esqueceu a Palavra-Passe?') }}
                                 </a>
                                 @endif
                                 <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registra-te</a>
@@ -59,7 +63,7 @@
                         </form>
                     </div>
                 </div>
-                
+
             </section>
     </x-auth-card>
 </x-guest-layout>

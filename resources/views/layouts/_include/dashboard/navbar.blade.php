@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="{{ route('admin.home.index') }}">Bem-vindo(a)</a>
+    <a class="navbar-brand ps-3" href="{{ route('admin.home.index') }}">BookStore <i class="fas fa-book-open"></i></a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="{{ route('admin.home.index') }}"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
@@ -22,7 +22,7 @@
                 </li>
                 <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Sair') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf

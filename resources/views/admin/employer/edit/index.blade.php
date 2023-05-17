@@ -11,7 +11,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Editar Funcionário </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.employer.list.index') }}">Lista de Clientes</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.employer.list.index') }}">Lista de Funcionários</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>

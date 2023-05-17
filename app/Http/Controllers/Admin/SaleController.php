@@ -17,8 +17,8 @@ class SaleController extends Controller
 
     public function index()
     {
-        $sales = Sale::all();
-        return view('admin.sale.list.index', compact('sales'));
+         $response['sales'] = Sale::all();
+        return view('admin.sale.list.index',$response);
     }
 
 
@@ -135,8 +135,7 @@ class SaleController extends Controller
 
          $pdf = Pdf::loadView('admin.sale.report.index', compact('Init', 'End', 'sales'))
              ->setPaper('a4', 'portrait');
-             //->save(public_path('report' . Str::random("10") . 'pdf'));
-
+             
         return $pdf->download('Relatório.pdf');
     }
 }
