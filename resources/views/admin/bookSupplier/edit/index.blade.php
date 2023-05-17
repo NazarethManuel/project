@@ -11,7 +11,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Editar Associação</li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.list.index') }}">Lista de Associações</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.list.index') }}">Listar Associações</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>

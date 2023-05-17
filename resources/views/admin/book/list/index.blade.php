@@ -14,7 +14,7 @@
                     <br>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Lista de Livros </li>
-                            <li class="breadcrumb-item"><a href="{{ route('admin.book.create.index') }}">Cadastrar Novo Livro </a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.book.create.index') }}">Cadastrar Livro </a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                         </ol>
                     </div>

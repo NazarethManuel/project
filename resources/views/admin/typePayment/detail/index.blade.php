@@ -21,32 +21,25 @@
             <hr>
 
             <div class="container-fluid px-4">
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active"></li>
-                </ol>
-
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Detalhe do Tipo de Pagamento
-                    </div>
-                    <div claclsss="card-body">
-                        <table id="datatablesSimple">
+                
+                <div claclsss="card-body">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
-                                 <th>Tipo de Pagamento</th>
+                                    <th>Tipo de Pagamento</th>                  
 
                                 </tr>
                             </thead>
-
                             <tbody>
                                 <tr>
-                                    <td>{{ $typePayment->type }}</td>
-                                </tr>
+                                <td>{{ $typePayment->type }}</td>
+                                  </tr>
+
+
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    </div>  
+
             </div>
         </div>
     </main>

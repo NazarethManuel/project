@@ -10,7 +10,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Cadastrar Novo </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.costumer.list.index') }}">Lista de Clientes</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.costumer.list.index') }}">Listar Clientes</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -37,7 +37,7 @@
                             @csrf
                             @include('form._formCostumer.index')
                             <div class="col-md-12 mt-4 text-end">
-                                <button class="btn btn-primary shadow"><i class="fas fa-plus"></i>Cadastrar</button>
+                                <button class="btn btn-primary shadow"><i class="fas fa-plus"></i> Cadastrar</button>
                             </div>
                         </form>
                     </div>

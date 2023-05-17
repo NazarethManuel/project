@@ -12,7 +12,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Detalhe do Livro</li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.book.list.index') }}">Lista de Livros</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.book.list.index') }}">Listar Livros</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -23,11 +23,9 @@
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Livros Cadastrados
-                    </div>
+                
+                    
+                    
                     <div claclsss="card-body">
                         <table class="table table-striped">
                             <thead>
@@ -54,8 +52,7 @@
 
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    </div>                
             </div>
         </div>
     </main>

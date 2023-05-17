@@ -26,6 +26,11 @@ class EmployerController extends Controller
 
     public function store(Request $request)
     {
+        $exist= Employer::where('nif', $request->nif)->first();
+        
+        if ($exist) {
+            return redirect()->back()->with('existing_cadast', '1');
+        }
         $response = $this->validate($request, [
             'name' => 'required|max:150',
             'telephone' => 'required|max:150',

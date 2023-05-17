@@ -24,6 +24,11 @@ class CostumerController extends Controller
 
     public function store(Request $request)
     {
+        $exist= Costumer::where('name', $request->name)->first();
+        
+        if ($exist) {
+            return redirect()->back()->with('existing_cadast', '1');
+        }
         $response = $this->validate($request, [
             'name' => 'required|max:150',
             'telephone' => 'required|max:150',

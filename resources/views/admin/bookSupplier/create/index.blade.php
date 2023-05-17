@@ -7,11 +7,11 @@
         <div class="container-fluid px-4">
             <div class="col-md-11 ml-5">
                 <br>
-                <h3 class="mt-4">Cadastrar Nova Associação Entre Livro e Fornecedor</h3>
+                <h3 class="mt-4">Cadastrar  Associação Entre Livro e Fornecedor</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Cadastrar Nova Associação</li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.list.index') }}">Lista de Associações</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.list.index') }}">Listar Associações</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>

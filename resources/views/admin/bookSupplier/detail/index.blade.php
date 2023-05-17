@@ -13,7 +13,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Detalhe da Associação</li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.list.index') }}">Lista de Associações</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.list.index') }}">Listar Associações</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -24,31 +24,26 @@
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Livros e Fornecedores Associados
-                    </div>
-                    <div claclsss="card-body">
-                        <table id="datatablesSimple">
+                
+   <div claclsss="card-body">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Titúlo do Livro</th>
-                                    <th>Nome do Fornecedor</th>
+                                <th>Titúlo do Livro</th>
+                                <th>Nome do Fornecedor</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr>
-                                    <td>{{ $bookSuppliers->book->title }}</td>
-                                    <td>{{ $bookSuppliers->supplier->name }}</td>
+                                <td>{{ $bookSuppliers->book->title }}</td>
+                                <td>{{ $bookSuppliers->supplier->name }}</td>
                                 </tr>
 
 
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    </div>                 
             </div>
         </div>
 

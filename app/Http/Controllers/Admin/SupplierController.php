@@ -24,6 +24,11 @@ class SupplierController extends Controller
 
     public function store(Request $request)
     {
+        $exist= Supplier::where('nif', $request->nif)->first();
+        
+        if ($exist) {
+            return redirect()->back()->with('existing_cadast', '1');
+        }
 
         $response = $this->validate($request, [
             'name' => 'required |max:150',

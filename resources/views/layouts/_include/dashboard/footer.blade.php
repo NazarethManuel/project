@@ -18,53 +18,33 @@
 <script src="/books/assets/demo/chart-area-demo.js"></script>
 <script src="/books/assets/demo/chart-bar-demo.js"></script>
 <script src="/books/js/datatables-simple-demo.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.2.0/dist/umd/simple-datatables.min.js"></script>
 
 <script>
-
-        document.addEventListener('DOMContentLoaded', function() {
-
-            new simpleDatatables.DataTable('#datatablesSimple', {
-
-                language: {
-
-                    search: 'Buscar:',
-
-                    searchPlaceholder: 'Digite para buscar',
-
-                    pagination: {
-
-                        previous: '&lsaquo;',
-
-                        next: '&rsaquo;',
-
-                        first: '&laquo;',
-
-                        last: '&raquo;'
-
-                    },
-
-                    emptyTable: 'Nenhum dado encontrado',
-
-                    info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
-
-                    infoEmpty: 'Mostrando 0 a 0 de 0 registros',
-
-                    lengthMenu: 'Mostrar _MENU_ registros por página',
-
-                    loadingRecords: 'Carregando...',
-
-                    zeroRecords: 'Nenhum registro encontrado',
-
-                    processing: 'Processando...'
-
-                }
-
-            });
-
+    document.addEventListener('DOMContentLoaded', function() {
+        new simpleDatatables.DataTable('#datatablesSimple', {
+            language: {
+                search: 'Buscar:',
+                searchPlaceholder: 'Digite para buscar',
+                pagination: {
+                    previous: '&lsaquo;',
+                    next: '&rsaquo;',
+                    first: '&laquo;',
+                    last: '&raquo;'
+                },
+                emptyTable: 'Nenhum dado encontrado',
+                info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
+                infoEmpty: 'Mostrando 0 a 0 de 0 registros',
+                lengthMenu: 'Mostrar _MENU_ registros por página',
+                loadingRecords: 'Carregando...',
+                zeroRecords: 'Nenhum registro encontrado',
+                processing: 'Processando...'
+            }
         });
+    });
+</script>
 
-    </script>
 
 
 
@@ -124,11 +104,11 @@
     })
 </script>
 
-@elseif(session('romm_occupied'))
+@elseif(session('existing_cadast'))
 <script>
     Swal.fire({
         icon: 'error',
-        title: 'Esta sala estará ocupada neste horário!',
+        title: 'Este cadastro já existe!',
         showConfirmButton: true
     })
 </script>

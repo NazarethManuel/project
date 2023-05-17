@@ -14,7 +14,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Detalhe do Usuário </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.employer.list.index') }}">
-                        lista de Usuários</a></li>
+                        listar Usuários</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -25,16 +25,13 @@
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Detalhe do Usuário
-                    </div>
-                    <div claclsss="card-body">
-                        <table id="datatablesSimple">
+                
+
+                <div claclsss="card-body">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nome do Usuário</th>
+                                <th>Nome do Usuário</th>
                                     <th>Contacto</th>
                                     <th>Morada</th>
                                     <th>Email</th>
@@ -43,20 +40,20 @@
 
                                 </tr>
                             </thead>
-
                             <tbody>
                                 <tr>
-                                    <td>{{ $employer->name}}</td>
-                                    <td>{{ $employer->telephone }}</td>
-                                    <td>{{ $employer->address }}</td>
-                                    <td>{{ $employer->email}}</td>
-                                    <td>{{ $employer->nif}}</td>
-                                    <td>{{ $employer->role}}</td>
+                                <td>{{ $employer->name}}</td>
+                                <td>{{ $employer->telephone }}</td>
+                                <td>{{ $employer->address }}</td>
+                                <td>{{ $employer->email}}</td>
+                                <td>{{ $employer->nif}}</td>
+                                <td>{{ $employer->role}}</td>
                                 </tr>
+
+
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    </div>                 
             </div>
         </div>
     </main>

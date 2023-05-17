@@ -25,6 +25,11 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
+        $exist= Book::where('isbn', $request->isbn)->first();
+        
+        if ($exist) {
+            return redirect()->back()->with('existing_cadast', '1');
+        }
         $response = $request->validate([
             'title' => 'required|max:150',
             'author' => 'required|max:150',

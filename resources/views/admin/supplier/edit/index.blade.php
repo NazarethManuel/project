@@ -11,7 +11,7 @@
                   <br>
                       <ol class="breadcrumb mb-4">
                           <li class="breadcrumb-item active">Editar Fornecedor</li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.supplier.list.index') }}">Lista de Fornecedores</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.supplier.list.index') }}">Listar Fornecedores</a></li>
                           <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                       </ol>
               </div>
