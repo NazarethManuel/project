@@ -40,7 +40,7 @@
                             @include('form._formSale.index')
 
                             <div class="col-md-12 mt-3 text-end">
-                                <button class="btn btn-primary shadow" type="submit">Alterar</button>
+                                <button class="btn btn-primary shadow" type="submit">Salvar Alterações</button>
                             </div>
                         </form>
                     </div>

@@ -42,7 +42,7 @@
                             @include('form._formBookSupplier.index')
 
                             <div class="col-md-12 mt-3 text-end">
-                                <button class="btn btn-primary shadow" type="submit"><i class="fas fa-plus"></i>{{ isset($bookSuppliers) ? 'Editar' : 'Cadastrar' }}</button>
+                          <button class="btn btn-primary shadow" type="submit"><i class="fas fa-plus"></i>{{ isset($bookSuppliers) ? 'Salvar Alterações' : 'Cadastrar' }}</button>
                             </div>
                         </form>
                     </div>

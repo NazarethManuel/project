@@ -13,7 +13,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Lista de Tipos de Pagamentos </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.typePayment.create.index') }}">Adicionar Novo Tipo de Pagamento</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.typePayment.create.index') }}">Cadastrar  Tipo de Pagamento</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>

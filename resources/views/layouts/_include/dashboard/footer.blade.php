@@ -1,11 +1,11 @@
                 <footer class="py-4 bg-light mt-auto">
                         <div class="container-fluid px-4">
                                 <div class="d-flex align-items-center justify-content-between small">
-                                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                                        <div class="text-muted">Copyright &copy; BookStore 2023</div>
                                         <div>
-                                                <a href="#">Privacy Policy</a>
+                                                <a href="#">Politicas e Privacidade</a>
                                                 &middot;
-                                                <a href="#">Terms &amp; Conditions</a>
+                                                <a href="#">Termos &amp; Condições</a>
                                         </div>
                                 </div>
                         </div>
@@ -14,12 +14,59 @@
 </div>
 <script src="{{ asset('js/datatable-pt.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="/books/js/scripts.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <script src="/books/assets/demo/chart-area-demo.js"></script>
 <script src="/books/assets/demo/chart-bar-demo.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 <script src="/books/js/datatables-simple-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+
+<script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            new simpleDatatables.DataTable('#datatablesSimple', {
+
+                language: {
+
+                    search: 'Buscar:',
+
+                    searchPlaceholder: 'Digite para buscar',
+
+                    pagination: {
+
+                        previous: '&lsaquo;',
+
+                        next: '&rsaquo;',
+
+                        first: '&laquo;',
+
+                        last: '&raquo;'
+
+                    },
+
+                    emptyTable: 'Nenhum dado encontrado',
+
+                    info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
+
+                    infoEmpty: 'Mostrando 0 a 0 de 0 registros',
+
+                    lengthMenu: 'Mostrar _MENU_ registros por página',
+
+                    loadingRecords: 'Carregando...',
+
+                    zeroRecords: 'Nenhum registro encontrado',
+
+                    processing: 'Processando...'
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
 
 
 {{-- sweetalert Footer--}}

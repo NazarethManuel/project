@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-6">
-        <label for="name">Nome do Funcionário</label>
+        <label for="name">Nome do Usuário</label>
         <input type="text" class="form-control" name="name" id="name" value="{{old('name', isset($employer->name)? $employer->name : '') }}">
 
     </div>

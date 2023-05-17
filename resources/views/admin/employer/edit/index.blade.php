@@ -7,11 +7,11 @@
         <div class="container-fluid px-4">
             <div class="col-md-11 ml-5">
                 <br>
-                <h3 class="mt-4">Editar Funcionário</h3>
+                <h3 class="mt-4">Editar Usuário</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Editar Funcionário </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.employer.list.index') }}">Lista de Funcionários</a></li>
+                    <li class="breadcrumb-item active">Editar Usuário </li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.employer.list.index') }}">Lista de Usuários</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -39,7 +39,7 @@
                             @include('form._formEmployer.index')
 
                             <div class="col-md-12 mt-3 text-end">
-                                <button class="btn btn-primary shadow" type="submit">Alterar</button>
+                                <button class="btn btn-primary shadow" type="submit">Salvar Alterações</button>
                             </div>
                         </form>
                     </div>

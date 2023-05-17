@@ -7,10 +7,10 @@
         <div class="container-fluid px-4">
                 <div class="col-md-11 ml-5 ">
                   <br>
-                    <h3 class="mt-4">Adicionar Novo Livro</h3>
+                    <h3 class="mt-4">Cadastrar Novo Livro</h3>
                     <br>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Adicionar Novo</li>
+                            <li class="breadcrumb-item active">Cadastrar Novo</li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.book.list.index') }}">Lista de Livros</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                         </ol>
@@ -40,7 +40,7 @@
 
                             @include('form._formBook.index')
                             <div class="col-md-12 mt-3 text-end">
-                                <button class="btn btn-primary shadow"><i class="fas fa-plus me-1"></i>Adicionar</button>
+                                <button class="btn btn-primary shadow"><i class="fas fa-plus me-1"></i>Cadastrar</button>
                             </div>
                         </form>
                     </div>

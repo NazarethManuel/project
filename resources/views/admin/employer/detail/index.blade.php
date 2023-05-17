@@ -9,12 +9,12 @@
         <div class="container-fluid px-4">
             <div class="col-md-11 ml-5 ">
                 <br>
-                <h3 class="mt-4">Detalhe do Funcionários</h3>
+                <h3 class="mt-4">Detalhe do Usuário</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Detalhe do Funcionário </li>
+                    <li class="breadcrumb-item active">Detalhe do Usuário </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.employer.list.index') }}">
-                        lista de Funcionários</a></li>
+                        lista de Usuários</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -28,13 +28,13 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Detalhe do Funcionários
+                        Detalhe do Usuário
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Nome do cliente</th>
+                                    <th>Nome do Usuário</th>
                                     <th>Contacto</th>
                                     <th>Morada</th>
                                     <th>Email</th>

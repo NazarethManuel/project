@@ -13,7 +13,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Lista de Associações</li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.create.index') }}">Adicionar Nova Associação</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.bookSupplier.create.index') }}">Cadastrar Nova Associação</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>

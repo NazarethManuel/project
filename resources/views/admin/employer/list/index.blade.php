@@ -13,7 +13,7 @@
                 <br>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Lista de Funcionários </li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.employer.create.index') }}">Adicionar Novo Funcionário</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.employer.create.index') }}">Cadastrar Funcionário</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
             </div>
@@ -27,13 +27,13 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Lista de Funcionários
+                        Lista de Usuários
                     </div>
                     <div claclsss="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Nome do Funcionário</th>
+                                    <th>Nome do Usuário</th>
                                     <th>Contacto</th>
                                     <th>email</th>
                                     <th>Acção</th>
