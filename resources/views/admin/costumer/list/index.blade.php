@@ -47,6 +47,10 @@
                                     <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas  fa-fw"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                                </svg>
                                             </a>
 
                                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

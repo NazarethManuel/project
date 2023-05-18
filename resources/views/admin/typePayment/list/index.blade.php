@@ -25,27 +25,31 @@
                 </ol>
 
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Lista de Clientes
-                    </div>
                     <div claclsss="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
+                        <table id="tableSimple" class="display" style="width:100%">
+                        <thead>
+                            <tr>
                                 <tr>
-                                    <th>Tipo de Pagamento</th>
-                                    <th>Acção</th>
+                                    <tr>
+                                        <th>Tipo de Pagamento</th>
+                                        <th>Acção</th>
+                                    </tr>
                                 </tr>
-                            </thead>
 
-                            <tbody>
-                                @foreach ($typePayment as $typePayments)
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($typePayment as $typePayments)
                                 <tr>
                                     <td>{{ $typePayments->type}}</td>
                                     <td>
                                         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas  fa-fw"></i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                                    </svg>
                                                 </a>
 
                                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -78,8 +82,8 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </div>
