@@ -28,9 +28,12 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Link de redefinição de senha de e-mail') }}
+                    {{ __('Link de redefinição de senha') }}
                 </x-button>
             </div>
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                {{ __('Voltar') }}
+            </a>
         </form>
     </x-auth-card>
 </x-guest-layout>

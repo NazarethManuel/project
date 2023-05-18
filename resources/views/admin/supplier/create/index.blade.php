@@ -36,15 +36,7 @@
                     <div class="card-body">
                         <form action="{{ route('admin.supplier.store') }}" method="post">
                             @csrf
-                            @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                                                     
                             @include('form._formSupplier.index')
                             <div class="col-md-12 mt-3 text-end">
                                 <button class="btn btn-primary shadow">Cadastrar</button>

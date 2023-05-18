@@ -38,7 +38,7 @@
                             @csrf
                             @include('form._formSale.index')
                             <div class="col-md-12 mt-4 text-end">
-                                <button class="btn btn-primary shadow"><i class="fas fa-plus"></i>Cadastrar</button>
+                                <button class="btn btn-primary shadow"><i class="fas fa-plus"></i> Cadastrar</button>
                             </div>
                         </form>
                     </div>
