@@ -35,6 +35,7 @@ class SaleController extends Controller
 
     public function store(Request $request)
     {
+       
         $data = $this->validate($request, [
             'quantity' => 'required',
             'total' => 'required',
@@ -70,6 +71,7 @@ class SaleController extends Controller
 
     public function edit($id)
     {
+
         $response['books'] = Book::get();
         $response['costumers'] = Costumer::get();
         $response['employers'] = Employer::get();
@@ -135,7 +137,7 @@ class SaleController extends Controller
 
          $pdf = Pdf::loadView('admin.sale.report.index', compact('Init', 'End', 'sales'))
              ->setPaper('a4', 'portrait');
-             
+
         return $pdf->download('Relatório.pdf');
     }
 }

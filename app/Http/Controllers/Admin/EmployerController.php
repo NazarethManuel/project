@@ -27,7 +27,7 @@ class EmployerController extends Controller
     public function store(Request $request)
     {
         $exist= Employer::where('nif', $request->nif)->first();
-        
+
         if ($exist) {
             return redirect()->back()->with('existing_cadast', '1');
         }
@@ -102,6 +102,8 @@ class EmployerController extends Controller
 
             Sale::where($record['fk_employers_id'])->delete();
         }
+
+        Employer::find($id)->delete();
         return redirect()->route('admin.employer.list.index')->with('destroy', '1');
     }
 }

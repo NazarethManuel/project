@@ -20,30 +20,27 @@
                     </div>
                     <hr>
 
-            <div class="container-fluid px-4">
+             <div class="container-fluid px-4">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
                 <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                       Lista de Livros
-                    </div>
-                    <div claclsss="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>Titulo Livro</th>
-                                    <th>Autor</th>
-                                    <th>Editora</th>
-                                    <th>Preço de Venda(AKZ)</th>
-                                    <th>Acção</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($books as $books)
+                    <div claclsss="card-body">
+                        <table id="tableSimple" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Titulo Livro</th>
+                                <th>Autor</th>
+                                <th>Editora</th>
+                                <th>Preço de Venda(AKZ)</th>
+                                <th>Acção</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($books as $books)
                                 <tr>
                                     <td>{{ $books->title }}</td>
                                     <td>{{ $books->author }}</td>
@@ -85,12 +82,12 @@
                                     </td>
                                 </tr>
                                 @endforeach
-
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 

@@ -26,7 +26,7 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $exist= Book::where('isbn', $request->isbn)->first();
-        
+
         if ($exist) {
             return redirect()->back()->with('existing_cadast', '1');
         }
@@ -119,6 +119,8 @@ class BookController extends Controller
             }
             sale::where($record['fk_books_id'])->delete();
         }
+
+        Book::find($id)->delete();
 
         return redirect()->route('admin.book.list.index')->with('destroy', '1');
     }

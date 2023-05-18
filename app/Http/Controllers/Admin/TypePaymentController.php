@@ -25,6 +25,11 @@ class TypePaymentController extends Controller
 
     public function store(Request $request)
     {
+        $exist= TypePayment::where('type', $request->type)->first();
+
+        if ($exist) {
+            return redirect()->back()->with('existing_cadast', '1');
+        }
         $response = $this->validate($request, [
             'type' => 'required|max:150'
         ],[
@@ -81,6 +86,8 @@ class TypePaymentController extends Controller
 
            Sale::where($record['fk_typePayments_id'])->delete();
        }
+
+        TypePayment::find($id)->delete();
         return redirect()->route('admin.typePayment.list.index')->with('destroy', '1');
 
     }

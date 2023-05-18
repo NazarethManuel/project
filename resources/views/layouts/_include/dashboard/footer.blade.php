@@ -1,7 +1,7 @@
                 <footer class="py-4 bg-light mt-auto">
                         <div class="container-fluid px-4">
                                 <div class="d-flex align-items-center justify-content-between small">
-                                        <div class="text-muted">Copyright &copy; BookStore 2023</div>
+                                        <div class="text-muted">Copyright &copy; BookStore {{ date('Y') }}</div>
                                         <div>
                                                 <a href="#">Politicas e Privacidade</a>
                                                 &middot;
@@ -12,38 +12,33 @@
                 </footer>
         </div>
 </div>
-<script src="{{ asset('js/datatable-pt.js') }}"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-<script src="/books/assets/demo/chart-area-demo.js"></script>
-<script src="/books/assets/demo/chart-bar-demo.js"></script>
-<script src="/books/js/datatables-simple-demo.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.2.0/dist/umd/simple-datatables.min.js"></script>
+<!-- Incluindo as bibliotecas do DataTables -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.22/i18n/Portuguese-Brasil.json"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        new simpleDatatables.DataTable('#datatablesSimple', {
+    $(document).ready(function() {
+        $('#tableSimple').DataTable({
+
             language: {
-                search: 'Buscar:',
-                searchPlaceholder: 'Digite para buscar',
-                pagination: {
-                    previous: '&lsaquo;',
-                    next: '&rsaquo;',
-                    first: '&laquo;',
-                    last: '&raquo;'
-                },
-                emptyTable: 'Nenhum dado encontrado',
-                info: 'Mostrando _START_ a _END_ de _TOTAL_ registros',
-                infoEmpty: 'Mostrando 0 a 0 de 0 registros',
-                lengthMenu: 'Mostrar _MENU_ registros por página',
-                loadingRecords: 'Carregando...',
-                zeroRecords: 'Nenhum registro encontrado',
-                processing: 'Processando...'
+                url: "//cdn.datatables.net/plug-ins/1.10.22/i18n/Portuguese-Brasil.json"
             }
         });
     });
 </script>
+
+
+
+
+
+
+
 
 
 

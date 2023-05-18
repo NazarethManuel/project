@@ -25,7 +25,7 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         $exist= Supplier::where('nif', $request->nif)->first();
-        
+
         if ($exist) {
             return redirect()->back()->with('existing_cadast', '1');
         }
@@ -101,6 +101,8 @@ class SupplierController extends Controller
 
               BookSupplier::where($record['fk_suppliers_id'])->delete();
           }
+
+          Supplier::find($id)->delete();
         return redirect()->route('admin.supplier.list.index')->with('destroy', '1');
     }
 }

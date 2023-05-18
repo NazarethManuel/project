@@ -25,7 +25,7 @@ class CostumerController extends Controller
     public function store(Request $request)
     {
         $exist= Costumer::where('name', $request->name)->first();
-        
+
         if ($exist) {
             return redirect()->back()->with('existing_cadast', '1');
         }
@@ -94,6 +94,8 @@ class CostumerController extends Controller
 
             Sale::where($record['fk_costumers_id'])->delete();
         }
+
+        Costumer::find($id)->delete();
 
         return redirect()->route('admin.costumer.list.index')->with('destroy', '1');
 
