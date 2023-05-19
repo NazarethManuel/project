@@ -50,7 +50,7 @@
                                     {{ __('Esqueceu a Palavra-Passe?') }}
                                 </a>
                                 @endif
-                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registra-te</a>
+                                {{--  <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registra-te</a>  --}}
 
                                 <x-button class="ml-3">
                                     {{ __('Entrar') }}

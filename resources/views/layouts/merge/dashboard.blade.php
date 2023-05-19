@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <title> @yield('title')</title>
+    <title> @yield('title','BookStore')</title>
     @include('layouts._include.dashboard.header')
 
 </head>
