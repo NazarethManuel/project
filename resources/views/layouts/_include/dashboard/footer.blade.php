@@ -2,11 +2,11 @@
                         <div class="container-fluid px-4">
                                 <div class="d-flex align-items-center justify-content-between small">
                                         <div class="text-muted">Copyright &copy; BookStore {{ date('Y') }}</div>
-                                        <div>
+                                        {{--  <div>
                                                 <a href="#">Politicas e Privacidade</a>
                                                 &middot;
                                                 <a href="#">Termos &amp; Condições</a>
-                                        </div>
+                                        </div>  --}}
                                 </div>
                         </div>
                 </footer>
@@ -20,7 +20,7 @@
 <script src="/books/assets/demo/chart-bar-demo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 <script src="/books/js/datatables-simple-demo.js"></script>
-       
+
         <!-- Incluindo as bibliotecas do DataTables -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
