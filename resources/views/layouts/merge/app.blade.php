@@ -9,7 +9,7 @@
     
     <title> @yield('title','BookStore')</title>
 
-    {{--  <title>{{ config('app.name', 'Login') }}</title>  --}}
+    <title>{{ config('app.name', 'Login') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('public/js/app.js') }}" defer></script>
