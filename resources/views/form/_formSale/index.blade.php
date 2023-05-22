@@ -39,15 +39,28 @@
 
     {{-- Client --}}
 
-    <div class="col-md-6">
+     <div class="col-md-6">
         <label for="fk_costumers_id">Cliente</label>
         <select class="form-control" name="fk_costumers_id" id="fk_costumers_id">
             <option value=""></option>
             @foreach ($costumers as $costumer)
-            <option value="{{$costumer->id}}" {{(isset($costumers->id)&& $sales->costumer->id == $costumers->id )? 'selected' : '' }} readonly>{{ $costumer->name }} </option>
+            <option value="{{$costumer->id}}" {{(isset($costumers->id)&& $sales->costumer->id == $costumers->id )? 'selected' : '' }} >{{ $costumer->name }}</option>
             @endforeach
         </select>
-    </div>
+    </div>  
+
+    {{--  <div class="col-md-6">
+        <label for="fk_costumers_id">Cliente</label>
+        <input type="text" class="form-control" name="costumer_name" id="costumer_name" value="{{ old('costumer_name') }}" />
+        <input type="hidden" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
+        <input type="checkbox" name="create_new_costumer" id="create_new_costumer">
+        <label for="create_new_costumer">Criar novo cliente</label>
+    </div>  --}}
+
+    {{--  <div class="col-md-6">
+        <label for="fk_costumers_id">Cliente</label>
+        <input type="text" class="form-control" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
+    </div>  --}}
 
     {{-- Employer --}}
     <div class="col-md-6">

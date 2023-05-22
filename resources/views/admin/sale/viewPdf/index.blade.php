@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <title>LuziAlf Fatura</title>
+    <title>BookStore Fatura</title>
     <style>
         body {
             font-family: 'Maven Pro', sans-serif;
@@ -40,7 +40,7 @@
                 <br>
                 <div class="d-flex flex-row p-2"> <img src="{{ public_path("/books/assets/img/book.png") }}" width="48">
 
-                    <div class="d-flex flex-column font-weight-bold"> <span class="font-weight-bold">LuziAlf Lda </span><small><br> NIF: 009456664</small> </div>
+                    <div class="d-flex flex-column font-weight-bold"> <span class="font-weight-bold">BookStore </span><small><br> NIF: 009456664</small> </div>
                     <div class="d-flex flex-column font-weight-bold"> <span class="font-weight-bold">Ingombota </span><small><br>Luanda, Angola</small> </div>
                 </div>
 
@@ -131,10 +131,10 @@
                     <table class="table table-borderless">
                         <tbody>
                             <tr class="add">
-                                <td class="font-weight-bold">Coordenadas bancárias LuziAlf</td>
+                                <td class="font-weight-bold">Coordenadas bancárias BookStore</td>
                             </tr>
                             <tr class="content">
-                                <td> Nome do Banco : Standard BANK <br> Nome do beneficiário : LuziAlf <br> Número de conta : 5454542WQR <br> IBAN: AO06 5454542WQR <br></td>
+                                <td> Nome do Banco : Standard BANK <br> Nome do beneficiário : BookStore <br> Número de conta : 5454542WQR <br> IBAN: AO06 5454542WQR <br></td>
                             </tr>
                         </tbody>
                     </table>

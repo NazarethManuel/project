@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <title>LuziAlf Fatura</title>
+    <title>BookStore Fatura</title>
     <style>
         body {
             font-family: 'Maven Pro', sans-serif;
@@ -41,7 +41,7 @@
                 <br>
                 <div class="d-flex flex-row p-2"> <img src="{{ public_path("/books/assets/img/book.png") }}" width="48">
 
-                    <div class="d-flex flex-column font-weight-bold"> <span class="font-weight-bold">LuziAlf Lda </span><small><br> NIF: 009456664</small> </div>
+                    <div class="d-flex flex-column font-weight-bold"> <span class="font-weight-bold">BookStore Lda </span><small><br> NIF: 009456664</small> </div>
                     <div class="d-flex flex-column font-weight-bold"> <span class="font-weight-bold">Ingombota </span><small><br>Luanda, Angola</small> </div>
                 </div>
 
@@ -87,9 +87,9 @@
 
 
 
-           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet" /> 
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet" />
            <link href = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" / >
 
-        
+
 </body>
 </html>

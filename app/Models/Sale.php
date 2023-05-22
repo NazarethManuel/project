@@ -11,7 +11,7 @@ class Sale extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public $table = "Sales";
+    public $table = "sales";
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 
