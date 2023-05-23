@@ -51,15 +51,15 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/costumer/destroy/{id}', ['as' => 'admin.costumer.destroy', 'uses' => 'Admin\CostumerController@destroy']);
     //END COSTUMER
 
-    //ROLE
-    Route::get('admin/role/list/index', ['as' => 'admin.role.list.index', 'uses' => 'Admin\RoleController@index']);
-    Route::get('admin/role/create/index', ['as' => 'admin.role.create.index', 'uses' => 'Admin\RoleController@create']);
-    Route::post('admin/role/create/store', ['as' => 'admin.role.store', 'uses' => 'Admin\RoleController@store']);
-    Route::get('admin/role/show/{id}', ['as' => 'admin.role.show', 'uses' => 'Admin\RoleController@show']);
-    Route::get('admin/role/create/edit/{id}', ['as' => 'admin.role.edit.index', 'uses' => 'Admin\RoleController@edit']);
-    Route::post('admin/role/update/{id}', ['as' => 'admin.role.update', 'uses' => 'Admin\RoleController@update']);
-    Route::get('admin/role/destroy/{id}', ['as' => 'admin.role.destroy', 'uses' => 'Admin\RoleController@destroy']);
-    //END ROLE
+    //User
+    Route::get('admin/user/list/index', ['as' => 'admin.user.l ist.index', 'uses' => 'Admin\UserController@index']);
+    Route::get('admin/user/create/index', ['as' => 'admin.user.create.index', 'uses' => 'Admin\UserController@create']);
+    Route::post('admin/user/create/store', ['as' => 'admin.user.store', 'uses' => 'Admin\UserController@store']);
+    Route::get('admin/user/show/{id}', ['as' => 'admin.user.show', 'uses' => 'Admin\UserController@show']);
+    Route::get('admin/user/create/edit/{id}', ['as' => 'admin.user.edit.index', 'uses' => 'Admin\UserController@edit']);
+    Route::post('admin/user/update/{id}', ['as' => 'admin.user.update', 'uses' => 'Admin\UserController@update']);
+    Route::get('admin/user/destroy/{id}', ['as' => 'admin.user.destroy', 'uses' => 'Admin\UserController@destroy']);
+    //END User
 
     //TYPE_PAYMENT
     Route::get('admin/typePayment/list/index', ['as' => 'admin.typePayment.list.index', 'uses' => 'Admin\TypePaymentController@index']);
