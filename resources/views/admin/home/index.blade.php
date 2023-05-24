@@ -1,6 +1,7 @@
 @extends('layouts.merge.dashboard')
-
 @section('content')
+
+
 
 <div id="layoutSidenav_content">
 <main>

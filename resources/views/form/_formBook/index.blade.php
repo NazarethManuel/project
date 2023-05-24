@@ -15,7 +15,7 @@
 
     </div>
     <div class="col-md-6">
-        <label for="isbn">ISBN</label>
+        <label for="isbn">IShBN</label>
         <input type="number" class="form-control" name="isbn" id="isbn"  value= "{{ old('isbn',isset($book->isbn)? $book->isbn : '')}}">
     </div>
     <div class="col-md-6">

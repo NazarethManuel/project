@@ -32,6 +32,7 @@
                                     <th>Id</th>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>Função</th>
                                     <th>Acção</th>
                                 </tr>
                             </thead>
@@ -41,6 +42,7 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>{{ $user->role_as }}</td>
 
                                     <td>
                                         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

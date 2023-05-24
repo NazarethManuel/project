@@ -12,14 +12,4 @@ class UserRole extends Model
     public $table = "user_roles";
     protected $guarded = ['id'];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'fk_users_id');
-    }
-
-    public function role()
-    {
-        return $this->belongsTo(Role::class, 'fk_roles_id');
-    }
-
 }

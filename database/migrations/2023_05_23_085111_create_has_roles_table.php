@@ -14,7 +14,7 @@ class CreateHasRolesTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-           $table->integer('role_as')->default('0');
+           $table->string('role_as')->default('administrador');
         });
     }
 

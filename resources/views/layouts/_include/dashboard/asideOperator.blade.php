@@ -101,8 +101,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('admin.user.create.index') }}">Cadastrar</a>
-                        <a class="nav-link" href="{{ route('admin.user.list.index') }}">Listar</a>
+                        <a class="nav-link" href="{{ route('admin.employer.create.index') }}">Cadastrar</a>
+                        <a class="nav-link" href="{{ route('admin.employer.list.index') }}">Listar</a>
                     </nav>
                 </div>
 

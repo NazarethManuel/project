@@ -39,16 +39,6 @@
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
 {{-- sweetalert Footer--}}
 @if (session('create'))
 <script>
@@ -113,21 +103,21 @@
     })
 </script>
 
-@elseif(session('room_Satatus'))
+@elseif(session('Status'))
 <script>
     Swal.fire({
         icon: 'error',
-        title: 'Existe uma sala com este nome!',
+        title: 'Não é um administrador',
         showConfirmButton: true
     })
 </script>
 
 
-@elseif(session('existing_candidate'))
+@elseif(session('existing'))
 <script>
     Swal.fire({
         icon: 'error',
-        title: 'Já existe um estudante com este Número de Identificação',
+        title: 'Por favor, faça login primeiro',
         showConfirmButton: true
     })
 </script>
