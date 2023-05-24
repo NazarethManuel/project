@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -28,6 +29,10 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $password = 'senha123'; // A senha a ser armazenada
+
+        $hashedPassword = Hash::make($password);
+        
         $validator = Validator::make($request->all(), [
             'password' => 'required|string|max:150',
             'password_confirmation' => 'required|string',

@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\SupplierController;
 
 
-Route::middleware('auth','administrator')->group(function () {
+Route::middleware('auth')->group(function () {
 
     Route::get('admin/home/index', ['as' => 'admin.home.index', 'uses' => 'Admin\HomeController@index']);
 
@@ -99,21 +99,21 @@ Route::middleware('auth','administrator')->group(function () {
 });
 
 
-Route::middleware('operator')->group(function () {
+// Route::middleware('operator')->group(function () {
 
-    Route::get('admin/home/index', ['as' => 'admin.home.index', 'uses' => 'Admin\HomeController@index']);
+//     Route::get('admin/home/index', ['as' => 'admin.home.index', 'uses' => 'Admin\HomeController@index']);
 
-    //SALE
-    Route::get('admin/sale/list/index', ['as' => 'admin.sale.list.index', 'uses' => 'Admin\SaleController@index']);
-    Route::get('admin/sale/create/index', ['as' => 'admin.sale.create.index', 'uses' => 'Admin\SaleController@create']);
-    Route::post('admin/sale/create/store', ['as' => 'admin.sale.store', 'uses' => 'Admin\SaleController@store']);
-    Route::get('admin/sale/show/{id}', ['as' => 'admin.sale.show', 'uses' => 'Admin\SaleController@show']);
-    Route::get('admin/sale/edit/{id}', ['as' => 'admin.sale.edit.index', 'uses' => 'Admin\SaleController@edit']);
-    Route::post('admin/sale/update/{id}', ['as' => 'admin.sale.update', 'uses' => 'Admin\SaleController@update']);
-    Route::post('admin/sale/destroy/{id}', ['as' => 'admin.sale.destroy', 'uses' => 'Admin\SaleController@destroy']);
-    Route::get('admin/sale/viewPdf/{id}', ['as' => 'admin.sale.viewPdf', 'uses' => 'Admin\SaleController@viewPdf']);
-    Route::get('admin/sale/exportPdf/{id}', ['as' => 'admin.sale.exportPdf', 'uses' => 'Admin\SaleController@exportPdf']);
-    Route::post('admin/sale/search', ['as' => 'admin.sale.search', 'uses' => 'Admin\SaleController@search']);
-    //END SALE
+//     //SALE
+//     Route::get('admin/sale/list/index', ['as' => 'admin.sale.list.index', 'uses' => 'Admin\SaleController@index']);
+//     Route::get('admin/sale/create/index', ['as' => 'admin.sale.create.index', 'uses' => 'Admin\SaleController@create']);
+//     Route::post('admin/sale/create/store', ['as' => 'admin.sale.store', 'uses' => 'Admin\SaleController@store']);
+//     Route::get('admin/sale/show/{id}', ['as' => 'admin.sale.show', 'uses' => 'Admin\SaleController@show']);
+//     Route::get('admin/sale/edit/{id}', ['as' => 'admin.sale.edit.index', 'uses' => 'Admin\SaleController@edit']);
+//     Route::post('admin/sale/update/{id}', ['as' => 'admin.sale.update', 'uses' => 'Admin\SaleController@update']);
+//     Route::post('admin/sale/destroy/{id}', ['as' => 'admin.sale.destroy', 'uses' => 'Admin\SaleController@destroy']);
+//     Route::get('admin/sale/viewPdf/{id}', ['as' => 'admin.sale.viewPdf', 'uses' => 'Admin\SaleController@viewPdf']);
+//     Route::get('admin/sale/exportPdf/{id}', ['as' => 'admin.sale.exportPdf', 'uses' => 'Admin\SaleController@exportPdf']);
+//     Route::post('admin/sale/search', ['as' => 'admin.sale.search', 'uses' => 'Admin\SaleController@search']);
+//     //END SALE
 
-});
+// });
