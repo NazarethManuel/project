@@ -21,7 +21,7 @@ class UserFactory extends Factory
             'nif' => '1234568',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => bcrypt("password"), // password
+            'password' => '$2y$10$LO1IMISwK.FQhytmCC/XjehrZRXKRy88fdzCtb5BEA2llIo6zRXeu', // password
             'role_as' => 'Administrador',
 
             'remember_token' => Str::random(10),
