@@ -1,66 +1,48 @@
-<x-guest-layout>
-    <x-auth-card>
-       
-            <x-slot name="logo">
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </x-slot>
 
+<div class="row">
+    <div class="col-md-6">
+        <label for="name">Nome do usuário</label>
+        <input type="text" class="form-control" name="name" id="name"  value="{{ old('name',  isset($user->name)? $user->name : '')}}" >
 
+    </div>
+    <div class="col-md-6">
+        <label for="contact1">Contacto</label>
+        <input type="text" class="form-control" name="contact1" id="contact1"  value="{{old('contact1', isset($user->contact1)? $user->contact1 : '')}}">
 
-            <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    </div>
+    <div class="col-md-6">
+        <label for="address">Morada</label>
+        <input type="text" class="form-control" name="address" id="address"  value="{{old('address', isset($user->address)? $user->address : '')}}">
 
-            <section class="vh-100">
-                <div class="container-fluid h-custom">
-                    <div class="row d-flex justify-content-center align-items-center w-200 h-100">
+    </div>
+    <div class="col-md-6">
+        <label for="nif">NIF</label>
+        <input type="text" class="form-control" name="nif" id="nif"  value= "{{ old('nif',isset($user->nif)? $user->nif : '')}}">
+    </div>
+    <div class="col-md-6">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" name="email" id="email"  value="{{old('email', isset($user->email)? $user->email : '')}}">
 
+    </div>
 
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+    <div class="col-md-6">
+        <label for="password">Palavra-Passe</label>
+        <input type="password" class="form-control" name="password" id="password"  value="{{ isset($user) ? '' : old('password') }}">
+    </div>
 
-                            <!-- Name -->
-                            <div>
-                                <x-label for="name" :value="__('Nome')" />
+    <div class="col-md-6">
+        <label for="password_confirmation">Confirme a Palavra-Passe</label>
+        <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  value="{{isset($user) ? '' : old('password_confirmation')}}">
 
-                                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-                            </div>
+    </div>
 
-                            <!-- Email Address -->
-                            <div class="mt-4">
-                                <x-label for="email" :value="__('Email')" />
+    <div class="col-md-6">
+        <label for="role_as">Tipo de utilizador</label>
+        <select class="form-control" name="role_as" id="role_as">
+            <option value="Administrador" {{old('role_as',isset($user->role_as)&& $user->role_as=="Administrador")? 'selected' : '' }}>Administrador</option>
+            <option value="Operador" {{old('role_as',isset($user->role_as)&& $user->role_as=="Operador"  )? 'selected' : '' }}>Operador</option>
+        </select>
+    </div>
 
-                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-                            </div>
+</div>
 
-                            <!-- Password -->
-                            <div class="mt-4">
-                                <x-label for="password" :value="__('Palavra-Passe')" />
-
-                                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-                            </div>
-
-                            <!-- Confirm Password -->
-                            <div class="mt-4">
-                                <x-label for="password_confirmation" :value="__('Confirme a Palavra-Passe')" />
-
-                                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
-                            </div>
-
-                            <div class="flex items-center justify-end mt-4">
-                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                                    {{ __('Já está registrado?') }}
-                                </a>
-
-                                <x-button class="ml-4">
-                                    {{ __('Registro') }}
-                                </x-button>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </section>
-    </x-auth-card>
-</x-guest-layout>
