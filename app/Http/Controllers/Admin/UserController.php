@@ -43,7 +43,7 @@ class UserController extends Controller
         }
 
         $response = $request->validate([
-            'name' => 'required|min:8|max:15',
+            'name' => 'required|max:150',
             'contact1' => 'required|max:150',
             'address' => 'required|max:150',
             'nif' => 'required|max:150',
@@ -84,30 +84,18 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        
-        $validator = Validator::make($request->all(), [
-            'password' => 'required|min:8|max:15',
-            'password_confirmation' => 'required|string',
-        ]);
-
-        $validator->sometimes(
-            'password_confirmation',
-            Rule::in([$request->input('password')]),
-            function ($input) {
-                return $input->password !== null;
-            }
-        );
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+        $user = User::find($id);
 
         $response = $request->validate([
             'name' => 'required|max:150',
             'contact1' => 'required|max:150',
             'address' => 'required|max:150',
             'nif' => 'required|max:150',
-            'email' => 'required|email|unique:users,email,',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users')->ignore($user->id),
+            ],
             'password' => 'required|min:8|max:15',
         ], [
             'name.required' => 'Digite o nome do utilizador',
@@ -118,13 +106,8 @@ class UserController extends Controller
             'password.required' => 'Digite uma palavra passe',
         ]);
 
-
-        $hashedPassword = Hash::make($response['password']);
-
-        $response['password'] = $hashedPassword;
-
         User::find($id)->update($response);
-        return redirect()->route('admin.user.edit.index')->with('create', '1');
+        return redirect()->route('admin.user.list.index', ['id' => $id])->with('edit', '1');
     }
 
 
