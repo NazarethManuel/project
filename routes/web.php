@@ -23,8 +23,8 @@ Route::get('/', function () {
 
 require __DIR__.'/admin.php';
 
-Route::get('/admin/home/index', function () {
-    return view('admin.home.index');
-})->middleware(['auth'])->name('admin.home.index');
+// Route::get('/admin/home/index', function () {
+//     return view('admin.home.index');
+// })->middleware(['auth'])->name('admin.home.index');
 
 

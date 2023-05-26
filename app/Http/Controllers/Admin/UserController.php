@@ -15,8 +15,8 @@ class UserController extends Controller
 
     public function index()
     {
-     $response['users'] = User::get();
-     return view('admin.user.list.index', $response);
+        $response['users'] = User::get();
+        return view('admin.user.list.index', $response);
     }
 
 
@@ -119,7 +119,7 @@ class UserController extends Controller
         $exists = Sale::where('fk_users_id', $record->id)->exists();
         if ($exists) {
 
-            if($record->costumer->count()>0 && $record->book->count()>0 && $record->typePayment->count()>0 ){
+            if ($record->costumer->count() > 0 && $record->book->count() > 0 && $record->typePayment->count() > 0) {
 
                 return redirect()->back()->with('deleteBook', '1');
             }
