@@ -40,8 +40,8 @@
                                     </div>
                                 </div>
 
-                            <div class="col-md-2" style="padding: 20px">
-                                <div class="mb-2">
+                            <div class="col-md-3" style="padding: 19px">
+                                <div class="mb-3">
                                     <button class="btn btn-success "><i class="fas fa-search"></i> Pesquisar</button>
                                 </div>
                             </div>

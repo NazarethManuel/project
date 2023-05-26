@@ -25,13 +25,13 @@ class Costumer extends Model
             );
     }
 
-    public function employer()
+    public function user()
     {
         return $this->belongsToMany(
-            Employer::class,
+            User::class,
              'sales',
              'fk_costumers_id',
-             'fk_employers_id'
+             'fk_user_id'
             );
     }
 

@@ -94,7 +94,7 @@ class EmployerController extends Controller
 
         if ($exists) {
 
-            if($record->book->count()>0 && $record->costumer->count()>0 && $record->typePayment->count()>0){
+            if($record->book->count()>0 && $record->costumer->count()>0 && $record->user->count()>0){
 
                 return redirect()->back()->with('deleteBook', '1');
 

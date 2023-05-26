@@ -23,9 +23,9 @@ class CreateSalesTable extends Migration
             ->on('costumers')->onDelete('CASCADE')->onUpgrade('CASCADE');
 
 
-            $table->unsignedBigInteger('fk_employers_id');
-            $table->foreign('fk_employers_id')->references('id')
-            ->on('employers')->onDelete('CASCADE')->onUpgrade('CASCADE');
+            $table->unsignedBigInteger('fk_users_id');
+            $table->foreign('fk_users_id')->references('id')
+            ->on('users')->onDelete('CASCADE')->onUpgrade('CASCADE');
 
 
             $table->unsignedBigInteger('fk_typePayments_id');

@@ -35,13 +35,13 @@ class TypePayment extends Model
             );
     }
 
-    public function employer()
+    public function user()
     {
         return $this->belongsToMany(
-            Employer::class,
+            User::class,
              'sales',
              'fk_typePayments_id',
-             'fk_employers_id'
+             'fk_user_id'
             );
     }
 }

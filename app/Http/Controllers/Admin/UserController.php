@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sale;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -14,8 +15,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $response['users'] = User::get();
-        return view('Admin.user.list.index', $response);
+     $response['users'] = User::get();
+     return view('admin.user.list.index', $response);
     }
 
 
@@ -113,7 +114,20 @@ class UserController extends Controller
 
     public function destroy($id)
     {
+        $record = User::find($id);
+        //Sale_relation
+        $exists = Sale::where('fk_users_id', $record->id)->exists();
+        if ($exists) {
+
+            if($record->costumer->count()>0 && $record->book->count()>0 && $record->typePayment->count()>0 ){
+
+                return redirect()->back()->with('deleteBook', '1');
+            }
+            sale::where($record['fk_users_id'])->delete();
+        }
+
         User::find($id)->delete();
+
         return redirect()->route('admin.user.list.index')->with('destroy', '1');
     }
 }

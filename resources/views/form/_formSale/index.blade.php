@@ -47,7 +47,7 @@
             <option value="{{$costumer->id}}" {{(isset($costumers->id)&& $sales->costumer->id == $costumers->id )? 'selected' : '' }} >{{ $costumer->name }}</option>
             @endforeach
         </select>
-    </div>  
+    </div>
 
     {{--  <div class="col-md-6">
         <label for="fk_costumers_id">Cliente</label>
@@ -64,11 +64,11 @@
 
     {{-- Employer --}}
     <div class="col-md-6">
-        <label for="fk_employers_id">Funcionário</label>
-        <select class="form-control" name="fk_employers_id" id="fk_employers_id">
+        <label for="fk_users_id">Funcionário</label>
+        <select class="form-control" name="fk_users_id" id="fk_users_id">
             <option value=""></option>
-            @foreach ($employers as $employer)
-            <option value="{{$employer->id}}" {{(isset($employers->id)&& $sales->employer->id == $employers->id )? 'selected' : '' }}>{{ $employer->name }} </option>
+            @foreach ($users as $user)
+            <option value="{{$user->id}}" {{(isset($users->id)&& $sales->user->id == $users->id )? 'selected' : '' }}>{{ $user->name }} </option>
             @endforeach
         </select>
     </div>

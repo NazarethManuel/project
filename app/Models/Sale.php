@@ -26,9 +26,9 @@ class Sale extends Model
         return $this->belongsTo(Costumer::class, 'fk_costumers_id');
     }
 
-    public function employer()
+    public function user()
     {
-        return $this->belongsTo(Employer::class, 'fk_employers_id');
+        return $this->belongsTo(User::class, 'fk_user_id');
     }
 
     public function typePayment()

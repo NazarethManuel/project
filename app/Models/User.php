@@ -31,6 +31,36 @@ class User extends Authenticatable
 
     ];
 
+    public function book()
+    {
+        return $this->belongsToMany(
+            Book::class,
+             'sales',
+             'fk_typePayments_id',
+             'fk_books_id'
+            );
+    }
+
+    public function costumer()
+    {
+        return $this->belongsToMany(
+            Costumer::class,
+             'sales',
+             'fk_typePayments_id',
+             'fk_costumers_id'
+            );
+    }
+
+    public function typePayment()
+    {
+        return $this->belongsToMany(
+            TypePayment::class,
+             'sales',
+             'fk_user_id',
+             'fk_typePayment_id'
+            );
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -61,7 +61,7 @@
                     <div class="card bg-primary  text-white mb-4">
                         <div class="card-body">Total de Usuários
                             <hr>
-                            <h5>7</h5>
+                            <p>{{ $userCount }}</p>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="{{ route('admin.employer.list.index') }}">Ver Detalhes</a>
@@ -95,5 +95,4 @@
 
         </div>
     </main>
-
-    @endsection
+@endsection

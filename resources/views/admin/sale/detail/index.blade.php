@@ -18,9 +18,8 @@
                 </ol>
             </div>
 
-
             <hr>
-
+            
             <div class="container-fluid px-4">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
@@ -44,12 +43,9 @@
                                     <th>Tipo de Pagamento</th>
                                     <th>Funcionário</th>
                                 </tr>
-
-
                             </thead>
 
                             <tbody>
-
                                 <tr>
                                     <td>{{ $sales->costumer->name }}</td>
                                     <td>{{ $sales->book->title }}</td>
@@ -58,8 +54,7 @@
                                     <td>{{ $sales->book->salePrice }}</td>
                                     <td>{{ $sales->quantity }}</td>
                                     <td>{{ $sales->typePayment->type }}</td>
-                                    <td>{{ $sales->employer->name }}</td>
-
+                                    <td>{{ $sales->user->name }}</td>
                                 </tr>
                             </tbody>
                         </table>
