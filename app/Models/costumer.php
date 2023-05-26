@@ -31,7 +31,7 @@ class Costumer extends Model
             User::class,
              'sales',
              'fk_costumers_id',
-             'fk_user_id'
+             'fk_users_id'
             );
     }
 

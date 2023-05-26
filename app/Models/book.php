@@ -43,7 +43,7 @@ class Book extends Model
             User::class,
             'sales',
             'fk_books_id',
-            'fk_user_id'
+            'fk_users_id'
         );
     }
 
