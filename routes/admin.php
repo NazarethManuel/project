@@ -9,17 +9,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('admin/home/index', ['as' => 'admin.home.index', 'uses' => 'Admin\HomeController@index']);
 
-
-    //EMPLOYER
-    Route::get('admin/employer/list/index', ['as' => 'admin.employer.list.index', 'uses' => 'Admin\EmployerController@index']);
-    Route::get('admin/employer/create/index', ['as' => 'admin.employer.create.index', 'uses' => 'Admin\EmployerController@create']);
-    Route::post('admin/employer/create/store', ['as' => 'admin.employer.create.store', 'uses' => 'Admin\EmployerController@store']);
-    Route::get('admin/employer/show/{id}', ['as' => 'admin.employer.show', 'uses' => 'Admin\EmployerController@show']);
-    Route::get('admin/employer/edit/{id}', ['as' => 'admin.employer.edit.index', 'uses' => 'Admin\EmployerController@edit']);
-    Route::post('admin/employer/update/{id}', ['as' => 'admin.employer.update', 'uses' => 'Admin\EmployerController@update']);
-    Route::get('admin/employer/destroy/{id}', ['as' => 'admin.employer.destroy', 'uses' => 'Admin\EmployerController@destroy']);
-    //END EMPLOYER
-
     //BOOKS
     Route::get('admin/book/list/index', ['as' => 'admin.book.list.index', 'uses' => 'Admin\BookController@index']);
     Route::get('admin/book/create/index', ['as' => 'admin.book.create.index', 'uses' => 'Admin\BookController@create']);

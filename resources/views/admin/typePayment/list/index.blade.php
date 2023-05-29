@@ -50,7 +50,7 @@
                                                     </svg>
                                                 </a>
 
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
 
                                                     <li>
                                                         <a href="{{route('admin.typePayment.edit.index',$typePayments->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

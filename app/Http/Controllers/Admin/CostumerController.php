@@ -76,7 +76,6 @@ class CostumerController extends Controller
 
     }
 
-
     public function destroy($id)
     {
         $record =  Costumer::find($id);

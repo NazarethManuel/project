@@ -11,7 +11,7 @@
                 <h3 class="mt-4">Lista de usuários </h3>
                 <br>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Lista de Livros </li>
+                    <li class="breadcrumb-item active">Lista de Usuários </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.user.create.index') }}">Cadastrar Usuário </a></li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
                 </ol>
@@ -45,7 +45,7 @@
                                     <td>{{ $user->role_as }}</td>
 
                                     <td>
-                                        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                                        <ul class="navbar-nav ms-auto ms-md-0 me-0 me-lg-0">
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas  fa-fw"></i>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
