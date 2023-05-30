@@ -12,7 +12,7 @@
                       <ol class="breadcrumb mb-4">
                           <li class="breadcrumb-item active">Lista de Fornecedores</li>
                           <li class="breadcrumb-item"><a href="{{ route('admin.supplier.create.index') }}">Cadastrar Fornecedor</a></li>
-                          <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                       </ol>
               </div>
               <hr>

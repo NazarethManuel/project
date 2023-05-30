@@ -4,7 +4,7 @@
 
     <div class="col-md-6">
         <label for="fk_books_id">Livro</label>
-        <select class="form-control" name="fk_books_id" id="books">
+        <select class="form-control" name="fk_books_id" id="books" >
             <option value=""></option>
             @foreach ($books as $book)
             <option value="{{$book->id}}" {{(isset($books->id)&& $sales->book->id == $books->id )? 'selected' : '' }}>{{ $book->title }} </option>
@@ -65,12 +65,8 @@
     {{-- Employer --}}
     <div class="col-md-6">
         <label for="fk_users_id">Funcionário</label>
-        <select class="form-control" name="fk_users_id" id="fk_users_id">
-            <option value=""></option>
-            @foreach ($users as $user)
-            <option value="{{$user->id}}" {{(isset($users->id)&& $sales->user->id == $users->id )? 'selected' : '' }}>{{ $user->name }} </option>
-            @endforeach
-        </select>
+        <input type="text" class="form-control" name="name" id="name" value='{{ Auth::user()->name}}' readonly>
+
     </div>
 
     {{-- Type Payment--}}

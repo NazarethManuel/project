@@ -9,6 +9,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('admin/home/index', ['as' => 'admin.home.index', 'uses' => 'Admin\HomeController@index']);
 
+    Route::get('admin/sale/teste/index', ['as' => 'admin.sale.teste.index', 'uses' => 'Admin\SaleController@teste']);
+
     //BOOKS
     Route::get('admin/book/list/index', ['as' => 'admin.book.list.index', 'uses' => 'Admin\BookController@index']);
     Route::get('admin/book/create/index', ['as' => 'admin.book.create.index', 'uses' => 'Admin\BookController@create']);

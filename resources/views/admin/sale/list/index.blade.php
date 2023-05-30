@@ -12,7 +12,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Lista de Clientes </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.sale.create.index') }}"> Cadastrar Venda</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}"> Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}"> Painel Inicial</a></li>
                 </ol>
             </div>
             <hr>
@@ -81,7 +81,7 @@
                                 <td>{{ $sale->book->salePrice }}</td>
                                 <td>{{ $sale->quantity }}</td>
                                 <td>{{ $sale->total }}</td>
-                                <td>{{ $sale->employer->name }}</td>
+                                <td>{{ Auth::user()->name}}</td>
                                 <td>
                                     <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                                         <li class="nav-item dropdown">

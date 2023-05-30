@@ -15,7 +15,7 @@
                     <li class="breadcrumb-item active">Detalhe do Cliente </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.costumer.list.index') }}">
                             Listar Clientes</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
             <hr>

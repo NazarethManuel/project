@@ -111,7 +111,7 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logado como:</div>
-                Administrador
+                {{ Auth::user()->role_as}}
             </div>
         </nav>
     </div>

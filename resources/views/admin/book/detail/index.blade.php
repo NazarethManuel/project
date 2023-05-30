@@ -13,7 +13,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Detalhe do Livro</li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.book.list.index') }}">Listar Livros</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
             <hr>
@@ -23,9 +23,9 @@
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
-                
-                    
-                    
+
+
+
                     <div claclsss="card-body">
                         <table class="table table-striped">
                             <thead>
@@ -52,7 +52,7 @@
 
                             </tbody>
                         </table>
-                    </div>                
+                    </div>
             </div>
         </div>
     </main>

@@ -13,7 +13,7 @@
                     <li class="breadcrumb-item active">Editar Vendas </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.sale.list.index') }}">
                         lista de Vendas</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
 

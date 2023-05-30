@@ -6,12 +6,12 @@
         <div class="container-fluid px-4">
             <div class="col-md-11 ml-5 ">
                 <br>
-                <h3 class="mt-4">Cadastrar Nova Venda</h3>
+                <h3 class="mt-4">Cadastrar Venda</h3>
                 <br>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Cadastrar Novo </li>
+                    <li class="breadcrumb-item active">Cadastrar Venda </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.sale.list.index') }}">Lista de Vendas</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
 

@@ -12,7 +12,7 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Lista de Tipos de Pagamentos </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.typePayment.create.index') }}">Cadastrar  Tipo de Pagamento</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
             <hr>
@@ -50,7 +50,7 @@
                                                     </svg>
                                                 </a>
 
-                                                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
                                                     <li>
                                                         <a href="{{route('admin.typePayment.edit.index',$typePayments->id)}}" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

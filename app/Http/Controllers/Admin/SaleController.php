@@ -140,4 +140,15 @@ class SaleController extends Controller
 
         return $pdf->download('Relatório.pdf');
     }
+
+    public function teste(){
+
+        $response['books'] = Book::get();
+        $response['costumers'] = Costumer::get();
+        $response['users'] = User::get();
+        $response['typePayments'] = TypePayment::get();
+        $response['sales'] = Sale::get();
+        return view('admin.sale.teste.index',$response);
+
+    }
 }

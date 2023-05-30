@@ -14,12 +14,12 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Detalhe ds Venda </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.sale.list.index') }}">Lista de Vendas</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
 
             <hr>
-            
+
             <div class="container-fluid px-4">
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
@@ -54,7 +54,7 @@
                                     <td>{{ $sales->book->salePrice }}</td>
                                     <td>{{ $sales->quantity }}</td>
                                     <td>{{ $sales->typePayment->type }}</td>
-                                    <td>{{ $sales->user->name }}</td>
+                                    <td>{{ Auth::user()->name}}</td>
                                 </tr>
                             </tbody>
                         </table>

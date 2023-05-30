@@ -121,7 +121,7 @@
                                 <td class="font-weight-bold">Funcionário(A)</td>
                             </tr>
                             <tr class="content">
-                                <td>{{ $sales->employer->name }} </td>
+                                <td>{{ Auth::user()->name}} </td>
                             </tr>
                         </tbody>
                     </table>

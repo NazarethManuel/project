@@ -15,18 +15,18 @@
                     <li class="breadcrumb-item active">Detalhe do Tipo de Pagamento </li>
                     <li class="breadcrumb-item"><a href="{{ route('admin.typePayment.list.index') }}">
                         lista de Tipos de Pagamentos</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Principal</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.home.index') }}">Painel Inicial</a></li>
                 </ol>
             </div>
             <hr>
 
             <div class="container-fluid px-4">
-                
+
                 <div claclsss="card-body">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Tipo de Pagamento</th>                  
+                                    <th>Tipo de Pagamento</th>
 
                                 </tr>
                             </thead>
@@ -38,7 +38,7 @@
 
                             </tbody>
                         </table>
-                    </div>  
+                    </div>
 
             </div>
         </div>
