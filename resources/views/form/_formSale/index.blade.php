@@ -4,7 +4,7 @@
 
     <div class="col-md-6">
         <label for="fk_books_id">Livro</label>
-        <select class="form-control" name="fk_books_id" id="books" >
+        <select class="form-control" name="fk_books_id" id="books">
             <option value=""></option>
             @foreach ($books as $book)
             <option value="{{$book->id}}" {{(isset($books->id)&& $sales->book->id == $books->id )? 'selected' : '' }}>{{ $book->title }} </option>
@@ -32,54 +32,54 @@
 
     <div class="col-md-6">
         <label for="total">Total (AKZ)</label>
-        <input type="number" class="form-control" readonly name="total" id="total" value={{ isset($sales->total)? $sales->total : ''}} >
+        <input type="number" class="form-control" readonly name="total" id="total" value={{ isset($sales->total)? $sales->total : ''}}>
     </div>
 
 
 
     {{-- Client --}}
 
-     <div class="col-md-6">
+    <div class="col-md-6">
         <label for="fk_costumers_id">Cliente</label>
         <select class="form-control" name="fk_costumers_id" id="fk_costumers_id">
             <option value=""></option>
             @foreach ($costumers as $costumer)
-            <option value="{{$costumer->id}}" {{(isset($costumers->id)&& $sales->costumer->id == $costumers->id )? 'selected' : '' }} >{{ $costumer->name }}</option>
+            <option value="{{$costumer->id}}" {{(isset($costumers->id)&& $sales->costumer->id == $costumers->id )? 'selected' : '' }}>{{ $costumer->name }}</option>
             @endforeach
         </select>
     </div>
 
-    {{--  <div class="col-md-6">
+    {{-- <div class="col-md-6">
         <label for="fk_costumers_id">Cliente</label>
         <input type="text" class="form-control" name="costumer_name" id="costumer_name" value="{{ old('costumer_name') }}" />
-        <input type="hidden" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
-        <input type="checkbox" name="create_new_costumer" id="create_new_costumer">
-        <label for="create_new_costumer">Criar novo cliente</label>
-    </div>  --}}
+    <input type="hidden" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
+    <input type="checkbox" name="create_new_costumer" id="create_new_costumer">
+    <label for="create_new_costumer">Criar novo cliente</label>
+</div> --}}
 
-    {{--  <div class="col-md-6">
+{{-- <div class="col-md-6">
         <label for="fk_costumers_id">Cliente</label>
         <input type="text" class="form-control" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
-    </div>  --}}
+</div> --}}
 
-    {{-- Employer --}}
-    <div class="col-md-6">
-        <label for="fk_users_id">Funcionário</label>
-        <input type="text" class="form-control" name="name" id="name" value='{{ Auth::user()->name}}' readonly>
+{{-- Employer --}}
+<div class="col-md-6">
+    <label for="fk_users_id">Funcionário</label>
+    <input type="text" class="form-control" name="name" id="name" value='{{ Auth::user()->name}}' readonly>
 
-    </div>
+</div>
 
-    {{-- Type Payment--}}
+{{-- Type Payment--}}
 
-    <div class="col-md-6">
-        <label for="fk_typePayments_id">Tipo de Pagamento</label>
-        <select class="form-control" name="fk_typePayments_id" id="fk_typePayments_id">
-            <option value=""></option>
-            @foreach ($typePayments as $typePayment)
-            <option value="{{$typePayment->id}}" {{(isset($typePayments->id)&& $sales->typePayment->id == $typePayments->id )? 'selected' : '' }}>{{ $typePayment->type }} </option>
-            @endforeach
-        </select>
-    </div>
+<div class="col-md-6">
+    <label for="fk_typePayments_id">Tipo de Pagamento</label>
+    <select class="form-control" name="fk_typePayments_id" id="fk_typePayments_id">
+        <option value=""></option>
+        @foreach ($typePayments as $typePayment)
+        <option value="{{$typePayment->id}}" {{(isset($typePayments->id)&& $sales->typePayment->id == $typePayments->id )? 'selected' : '' }}>{{ $typePayment->type }} </option>
+        @endforeach
+    </select>
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

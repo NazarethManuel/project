@@ -37,13 +37,13 @@ class Book extends Model
         );
     }
 
-    public function user()
+    public function employer()
     {
         return $this->belongsToMany(
-            User::class,
+            Employer::class,
             'sales',
             'fk_books_id',
-            'fk_users_id'
+            'fk_employers_id'
         );
     }
 
