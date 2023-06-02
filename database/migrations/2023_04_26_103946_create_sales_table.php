@@ -13,6 +13,7 @@ class CreateSalesTable extends Migration
             $table->id();
             $table->string('quantity', 150);
             $table->string('total', 150);
+            $table->string('overallTotal', 150);
 
             $table->unsignedBigInteger('fk_books_id');
             $table->foreign('fk_books_id')->references('id')

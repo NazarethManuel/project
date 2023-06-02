@@ -35,7 +35,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="showBook">
-                            <form action="#" method="post">
+                            <form action="#" method="post" id='addForm'>
                                 @csrf
                                 <div class="row">
                                     <table id="datatablesSimple">
@@ -45,7 +45,7 @@
                                                 <th class="text-center">Preço Unt.</th>
                                                 <th class="text-center">Qtd</th>
                                                 <th class="text-center">Total</th>
-                                                <th class="text-end"><a href="#" class="btn btn-info addRow">+</a></th>
+                                                <th class="text-end">Ação</th>
                                             </tr>
                                         </thead>
 
@@ -64,8 +64,7 @@
                                                 <td><input type="number" class="form-control" name="salePrice[]" id="salePrice" value='' readonly></td>
                                                 <td> <input type="number" class="form-control" name="quantity[]" id="quantity" value='' required></td>
                                                 <td> <input type="number" class="form-control total" readonly name="total[]" id="total" value='' required></td>
-
-                                                <td><a href="#" class="btn btn-danger">-</a></td>
+                                                <td><button type="button" class="btn btn-primary" id="addBtn">+</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -74,7 +73,7 @@
 
                                     {{-- Client --}}
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label for="fk_costumers_id">Cliente</label>
                                         <select class="form-control" name="fk_costumers_id" id="fk_costumers_id">
                                             <option value=""></option>
@@ -98,7 +97,7 @@
                         </div> --}}
 
                         {{-- Employer --}}
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="fk_users_id">Funcionário</label>
                             <input type="text" class="form-control" name="name" id="name" value='{{ Auth::user()->name}}' readonly>
 
@@ -106,7 +105,7 @@
 
                         {{-- Type Payment--}}
 
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="fk_typePayments_id">Tipo de Pagamento</label>
                             <select class="form-control" name="fk_typePayments_id" id="fk_typePayments_id">
                                 <option value=""></option>
@@ -117,7 +116,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 mt-4 text-end">
-                        <button class="btn btn-primary shadow"><i class="fas fa-plus"></i> Cadastrar</button>
+                        <button class="btn btn-primary shadow" id="primBtn"><i class="fas fa-plus"></i> Cadastrar</button>
                     </div>
                     </form>
                 </div>
@@ -130,7 +129,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <script type="text/javascript">
-
     $(document).ready(function() {
 
         $("#books").on("change click", function() {
@@ -154,66 +152,53 @@
             });
         });
 
+        $("#addBtn").click(function(e) {
+            e.preventDefault();
+            $("tbody").prepend(`<tr>
+                    <td>
+                        <select class="form-control" name="fk_books_id[]" id="books">
+                            <option value=""></option>
+                            @foreach ($books as $book)
+                            <option value="{{$book->id}}" {{(isset($books->id) && in_array($book->id, $sales->books->pluck('id')->toarray())) ? 'selected' : '' }}>
+                                {{ $book->title }}
+                            </option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td><input type="number" class="form-control" name="salePrice[]" id="salePrice" value='' readonly></td>
+                    <td> <input type="number" class="form-control" name="quantity[]" id="quantity" value='' required></td>
+                    <td> <input type="number" class="form-control total" readonly name="total[]" id="total" value='' required></td>
+                    <td><button type="button" class="btn btn-danger" id="removeBtn" >-</button></td>
+                </tr>`);
 
+        });
 
-        $(document).on('click', '.remove_book_btn', function(e) {
+        $(document).on('click', '#removeBtn', function(e) {
             e.preventDefault();
             let row = $(this).parent().parent();
             $(row).remove();
         });
     });
 
-    $('.addRow').on('click', function(){
-        addRow();
-    });
+    $("#addForm").submit(function(e){
+        e.preventDefault();
+        $("#primBtn").val('Criando...');
 
-    function addRow(){
-        var tr = '<tr>'+
-         '<td>'+
-            '<select class="form-control" name="fk_books_id[]" id="books">'+
-                    '<option value=""></option>'+
-                ' @foreach ($books as $book)'+
-                    '<option value="{{$book->id}}" {{(isset($books->id) && in_array($book->id, $sales->books->pluck('id ')->toarray())) ? 'selected ' : ''}}>{{ $book->title }}</option>'+
-                ' @endforeach'+
-            '</select>'+
-          '</td>'+
-            '<td><input type="number" class="form-control" name="salePrice[]" id="salePrice" value='' readonly></td>'+
-            '<td><input type="number" class="form-control" name="quantity[]" id="quantity" value='' required></td>'+
-            '<td><input type="number" class="form-control total" readonly name="total[]" id="total" value='' required></td>'+
-            '<td><a href="#" class="btn btn-danger">-</a></td>'+
-            '</tr>';
-
-            $('tbody').append(tr);
-    };
-
-
-
-    $(function() {
-        $('.quantity, .sale-price').change(function() {
-            var quantities = $('.quantity'); // Obter todos os elementos de quantidade em um array
-            var salePrices = $('.sale-price'); // Obter todos os elementos de preço de venda em um array
-
-            var totals = []; // Array para armazenar os totais
-
-            // Calcular o total para cada item
-            quantities.each(function(index) {
-                var quantity = parseInt($(this).val());
-                var salePrice = parseFloat(salePrices.eq(index).val());
-                var total = quantity * salePrice;
-
-                // Armazenar o total no array de totais
-                totals.push(total);
-            });
-
-            // Calcular o total geral somando todos os totais
-            var overallTotal = totals.reduce(function(a, b) {
-                return a + b;
-            }, 0);
-
-            // Definir o valor do campo total geral
-            $('#total').val(overallTotal);
+        $.ajax({
+            dataType: 'json'
+            , url: "/admin/sale/create"
+            , type: "GET"
+            , success: function(response) {
+               console.log(response)
+            }
+            , error: function(error) {
+                console.log(error);
+            }
         });
-    });
+
+    })
+
+
 
 </script>
 

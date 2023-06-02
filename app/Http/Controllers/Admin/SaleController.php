@@ -39,6 +39,7 @@ class SaleController extends Controller
         $data = $this->validate($request, [
             'quantity' => 'required',
             'total' => 'required',
+            'overallTotal'=> 'required',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
             'fk_users_id' => 'required',
@@ -46,7 +47,8 @@ class SaleController extends Controller
 
         ], [
             'quantity.required' => 'Adicione a quantidade',
-            'total.required' => 'Qual é o total',
+            'total.required' ,
+            'overallTotal',
             'fk_books_id.required' => 'Selecione o livro',
             'fk_costumers_id.required' => 'adicione o Cliente',
             'fk_users_id.required' => 'Selecione o funcionário',
@@ -87,6 +89,7 @@ class SaleController extends Controller
         $data = $this->validate($request, [
             'quantity' => 'required',
             'total' => 'required',
+            'overallTotal'=> 'required',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
             'fk_users_id' => 'required',
@@ -94,6 +97,7 @@ class SaleController extends Controller
 
         ], [
             'quantity.required' => 'Adicione a quantidade',
+            'overallTotal',
             'fk_books_id.required' => 'Selecione o livro',
             'fk_costumers_id.required' => 'adicione o Cliente',
             'fk_users_id.required' => 'Selecione o funcionário',
