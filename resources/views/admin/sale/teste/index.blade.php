@@ -131,7 +131,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        $("#books").on("change click", function() {
+        $("#books").on("change", function() {
             let id = $(this).val();
             $('#salePrice').empty();
             $.ajaxSetup({

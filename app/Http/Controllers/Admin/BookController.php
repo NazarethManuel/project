@@ -25,7 +25,7 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-        $exist= Book::where('isbn', $request->isbn)->first();
+        $exist = Book::where('isbn', $request->isbn)->first();
 
         if ($exist) {
             return redirect()->back()->with('existing_cadast', '1');
@@ -100,10 +100,9 @@ class BookController extends Controller
 
         if ($exists) {
 
-            if($record->supplier->count()>0){
+            if ($record->supplier->count() > 0) {
 
                 return redirect()->back()->with('deleteBook', '1');
-
             }
 
             BookSupplier::where($record['fk_books_id'])->delete();
@@ -113,7 +112,7 @@ class BookController extends Controller
         $exists = Sale::where('fk_books_id', $record->id)->exists();
         if ($exists) {
 
-            if($record->costumer->count()>0 && $record->employer->count()>0 && $record->typePayment->count()>0 ){
+            if ($record->costumer->count() > 0 && $record->employer->count() > 0 && $record->typePayment->count() > 0) {
 
                 return redirect()->back()->with('deleteBook', '1');
             }
