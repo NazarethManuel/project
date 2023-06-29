@@ -36,6 +36,7 @@
                                     <th>ISBN</th>
                                     <th>Quantidade</th>
                                     <th>Preço</th>
+                                    <th>Imagem</th>
 
                                 </tr>
                             </thead>
@@ -47,6 +48,10 @@
                                     <td>{{ $books->isbn }}</td>
                                     <td>{{ $books->startingAmount}}</td>
                                     <td>{{ $books->salePrice }}</td>
+                                    <td>
+                                <img src="{{ asset($books['img']) }}" alt="Imagem">
+
+                                    </td>
                                 </tr>
 
 

@@ -7,6 +7,8 @@ use App\Models\Book;
 use App\Models\BookSupplier;
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\{File, Storage};
+use PDF;
 
 class BookController extends Controller
 {
@@ -51,15 +53,9 @@ class BookController extends Controller
             'salePrice.required' => 'Digite o preço de venda do livro',
             'img.required'=>'carregue a imagem do livro'
         ]);
-        if($request->hasfile('img')){
 
-            $file = $request->file('img');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('upploads/students/', $filename);
-             $img = $filename;
-
-        }
+        $path = Storage::putFile('public/booksImg/', $request->img);
+        $response['img'] = $path;
 
         Book::create($response);
         return redirect()->route('admin.book.create.index')->with('create', '1');
