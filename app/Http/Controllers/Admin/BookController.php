@@ -38,7 +38,8 @@ class BookController extends Controller
             'startingAmount' => 'required|numeric',
             'finalQuantity',
             'purchasePrice' => 'required|numeric',
-            'salePrice' => 'required|numeric'
+            'salePrice' => 'required|numeric',
+            'img' => 'required'
 
         ], [
             'title.required' => 'Digite o título do livro',
@@ -47,8 +48,18 @@ class BookController extends Controller
             'isbn.required' => 'Digite o isbn do livro',
             'startingAmount.required' => 'Digite a quantidade de livro',
             'purchasePrice.required' => 'Digite o preço de compra do livro',
-            'salePrice.required' => 'Digite o preço de venda do livro'
+            'salePrice.required' => 'Digite o preço de venda do livro',
+            'img.required'=>'carregue a imagem do livro'
         ]);
+        if($request->hasfile('img')){
+
+            $file = $request->file('img');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('upploads/students/', $filename);
+             $img = $filename;
+
+        }
 
         Book::create($response);
         return redirect()->route('admin.book.create.index')->with('create', '1');
@@ -76,7 +87,8 @@ class BookController extends Controller
             'isbn' => 'required|max:150',
             'startingAmount' => 'required|numeric',
             'purchasePrice' => 'required|numeric',
-            'salePrice' => 'required|numeric'
+            'salePrice' => 'required|numeric',
+            'img' => 'required'
 
         ], [
             'title.required' => 'Digite o título do livro',
@@ -85,7 +97,8 @@ class BookController extends Controller
             'isbn.required' => 'Digite o isbn do livro',
             'startingAmount.required' => 'Digite a quantidade de livro',
             'purchasePrice.required' => 'Digite o preço de compra do livro',
-            'salePrice.required' => 'Digite o preço dde venda do livro'
+            'salePrice.required' => 'Digite o preço de venda do livro',
+            'img.required'=>'Carregue a imagem do livro'
         ]);
         Book::find($id)->update($response);
         return redirect()->route('admin.book.list.index')->with('edit', '1');

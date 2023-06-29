@@ -22,6 +22,7 @@ class CreateBooksTable extends Migration
             $table->string('startingAmount');
             $table->string('purchasePrice');
             $table->string('salePrice');
+            $table->string('img');
             $table->softDeletes();
             $table->timestamps();
         });

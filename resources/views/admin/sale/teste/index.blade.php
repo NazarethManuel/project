@@ -180,7 +180,7 @@
         });
     });
 
-    $("#addForm").submit(function(e){
+    $("#addForm").submit(function(e) {
         e.preventDefault();
         $("#primBtn").val('Criando...');
 
@@ -189,7 +189,7 @@
             , url: "/admin/sale/create"
             , type: "GET"
             , success: function(response) {
-               console.log(response)
+                console.log(response)
             }
             , error: function(error) {
                 console.log(error);
@@ -197,8 +197,6 @@
         });
 
     })
-
-
 
 </script>
 

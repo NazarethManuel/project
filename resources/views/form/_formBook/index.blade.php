@@ -33,6 +33,11 @@
         <input type="number" class="form-control" name="salePrice" id="salePrice"  value="{{ old('salePrice',isset($book->salePrice)? $book->salePrice : '')}}">
 
     </div>
+    <div class="col-md-6">
+        <label for="img">Imagem</label>
+        <input type="file" class="form-control" name="img" id="img"  value="{{ old('img',isset($book->img)? $book->img : '')}}">
+
+    </div>
 
 </div>
 
