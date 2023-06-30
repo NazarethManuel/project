@@ -49,7 +49,7 @@
                                     <td>{{ $books->startingAmount}}</td>
                                     <td>{{ $books->salePrice }}</td>
                                     <td>
-                                <img src="{{ asset($books['img']) }}" alt="Imagem">
+                                <img src="/{{str_replace('public','storage', $books->img)}}" alt="Imagem">
 
                                     </td>
                                 </tr>
@@ -57,6 +57,7 @@
 
                             </tbody>
                         </table>
+
                     </div>
             </div>
         </div>

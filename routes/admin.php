@@ -18,8 +18,11 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/book/show/{id}', ['as' => 'admin.book.show', 'uses' => 'Admin\BookController@show']);
     Route::get('admin/book/edit/{id}', ['as' => 'admin.book.edit.index', 'uses' => 'Admin\BookController@edit']);
     Route::post('admin/book/update/{id}', ['as' => 'admin.book.update', 'uses' => 'Admin\BookController@update']);
+    Route::post('admin/book/updateImg/{id}', ['as' => 'admin.book.updateImg', 'uses' => 'Admin\BookController@updateImg']);
     Route::get('admin/book/destroy/{id}', ['as' => 'admin.book.destroy', 'uses' => 'Admin\BookController@destroy']);
     Route::get('admin/book/getBookById/{id}', ['as' => 'admin.book.getBookById', 'uses' => 'Admin\BookController@getBookById']);
+
+
     //END BOOK
 
     //SUPPLIER
