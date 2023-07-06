@@ -26,39 +26,44 @@
 
 
 
-                    <div claclsss="card-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Titulo Livro</th>
-                                    <th>Autor</th>
-                                    <th>Editora</th>
-                                    <th>ISBN</th>
-                                    <th>Quantidade</th>
-                                    <th>Preço</th>
-                                    <th>Imagem</th>
+                <div claclsss="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Titulo Livro</th>
+                                <th>Autor</th>
+                                <th>Editora</th>
+                                <th>ISBN</th>
+                                <th>Quantidade</th>
+                                <th>Preço</th>
+                                {{-- <th>Imagem</th>  --}}
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ $books->title}}</td>
-                                    <td>{{ $books->author }}</td>
-                                    <td>{{ $books->publisher }}</td>
-                                    <td>{{ $books->isbn }}</td>
-                                    <td>{{ $books->startingAmount}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ $books->title}}</td>
+                                <td>{{ $books->author }}</td>
+                                <td>{{ $books->publisher }}</td>
+                                <td>{{ $books->isbn }}</td>
+                                <td> @if($books->startingAmount<=2) <span class="badge badge-danger">Baixo Stock >{{$books->startingAmount}}</span>
+                                        @else
+                                        <span class="badge badge-success">{{$books->startingAmount}}</span>
+                                    @endif </td>
+
+                                    {{--  <td>{{ $books->startingAmount}}</td>  --}}
                                     <td>{{ $books->salePrice }}</td>
-                                    <td>
+                                   <td>
                                 <img src="/{{str_replace('public','storage', $books->img)}}" alt="Imagem">
 
-                                    </td>
-                                </tr>
+                                </td>
+                            </tr>
 
 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
 
-                    </div>
+                </div>
             </div>
         </div>
     </main>

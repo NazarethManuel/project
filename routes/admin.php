@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/supplier/update/{id}', ['as' => 'admin.supplier.update', 'uses' => 'Admin\SupplierController@update']);
     Route::get('admin/supplier/destroy/{id}', ['as' => 'admin.supplier.destroy', 'uses' => 'Admin\SupplierController@destroy']);
     //END SUPPLIER
-
+/*
     //COSTUMER
     Route::get('admin/costumer/list/index', ['as' => 'admin.costumer.list.index', 'uses' => 'Admin\CostumerController@index']);
     Route::get('admin/costumer/create/index', ['as' => 'admin.costumer.create.index', 'uses' => 'Admin\CostumerController@create']);
@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/costumer/update/{id}', ['as' => 'admin.costumer.update', 'uses' => 'Admin\CostumerController@update']);
     Route::get('admin/costumer/destroy/{id}', ['as' => 'admin.costumer.destroy', 'uses' => 'Admin\CostumerController@destroy']);
     //END COSTUMER
-
+*/
     //User
     Route::get('admin/user/list/index', ['as' => 'admin.user.list.index', 'uses' => 'Admin\UserController@index']);
     Route::get('admin/user/create/index', ['as' => 'admin.user.create.index', 'uses' => 'Admin\UserController@create']);
@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/user/update/{id}', ['as' => 'admin.user.update', 'uses' => 'Admin\UserController@update']);
     Route::get('admin/user/destroy/{id}', ['as' => 'admin.user.destroy', 'uses' => 'Admin\UserController@destroy']);
     //END User
-
+/*
     //TYPE_PAYMENT
     Route::get('admin/typePayment/list/index', ['as' => 'admin.typePayment.list.index', 'uses' => 'Admin\TypePaymentController@index']);
     Route::get('admin/typePayment/create/index', ['as' => 'admin.typePayment.create.index', 'uses' => 'Admin\TypePaymentController@create']);
@@ -65,7 +65,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/typePayment/destroy/{id}', ['as' => 'admin.typePayment.destroy', 'uses' => 'Admin\TypePaymentController@destroy']);
 
     //END TYPE_PAYMENT
-
+*/
     //SALE
     Route::get('admin/sale/list/index', ['as' => 'admin.sale.list.index', 'uses' => 'Admin\SaleController@index']);
     Route::get('admin/sale/create/index', ['as' => 'admin.sale.create.index', 'uses' => 'Admin\SaleController@create']);

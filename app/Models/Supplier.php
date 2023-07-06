@@ -15,15 +15,9 @@ class Supplier extends Model
     protected $guarded = ['id'];
     protected $dates = ['deleted_at'];
 
-    public function book()
+    public function suppliers()
     {
-        return $this->belongsToMany(
-            Book::class,
-            'books_suppliers',
-            'fk_suppliers_id',
-            'fk_books_id'
-
-        );
+        return $this->belongsToMany(Supplier::class, 'books_suppliers', 'suppliers_id', 'books_id');
     }
 
 

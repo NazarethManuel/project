@@ -33,10 +33,18 @@
         <input type="number" class="form-control" name="salePrice" id="salePrice" value="{{ old('salePrice',isset($book->salePrice)? $book->salePrice : '')}}">
 
     </div>
-    <div class="col-md-6">
-        <label for="image">Imagem</label>
-        <input type="file" class="form-control" name="image" id="image" value="{{ old('image',isset($book->image)? $book->image : '')}}">
 
-    </div>
+    {{--  <div class="col-md-6">
+        <label for="fk_suppliers_id">Fornecedor</label>
+        <select class="form-control" name="fk_suppliers_id" id="fk_suppliers_id">
+            <option value=""></option>
+            @foreach ($book as $book)
+                @foreach ($book->supplier as $supplier)
+                    <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                @endforeach
+            @endforeach
+        </select>
+    </div>  --}}
+
 
 </div>

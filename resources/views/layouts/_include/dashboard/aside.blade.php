@@ -38,7 +38,7 @@
                         </nav>
                     </div>
 
-                <div>
+                {{--  <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCostumer" aria-expanded="false" aria-controls="collapseCostumer">
                         <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                         Cliente
@@ -64,9 +64,9 @@
                             <a class="nav-link" href="{{ route('admin.typePayment.list.index') }}">Listar</a>
                         </nav>
                     </div>
-                </div>
+                </div>  --}}
 
-                {{--  <div>
+                   <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="fas fa-box"></i></div>
                        Livro e Fornecedor
@@ -78,7 +78,7 @@
                             <a class="nav-link" href="{{ route('admin.bookSupplier.list.index') }}">Listar</a>
                         </nav>
                     </div>
-                </div>  --}}
+                </div>
 
                 <div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">

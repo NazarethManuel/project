@@ -32,6 +32,7 @@
                     <li class="breadcrumb-item active"></li>
                 </ol>
 
+            <div class="cool-md-9">
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="showBook">
@@ -122,6 +123,7 @@
                 </div>
             </div>
         </div>
+        </div>
 </div>
 </div>
 </main>
@@ -175,7 +177,7 @@
 
         $(document).on('click', '#removeBtn', function(e) {
             e.preventDefault();
-            let row = $(this).parent().parent();
+            let row = $(this).parent().parent();  
             $(row).remove();
         });
     });

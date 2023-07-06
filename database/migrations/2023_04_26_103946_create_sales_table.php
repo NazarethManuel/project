@@ -13,6 +13,8 @@ class CreateSalesTable extends Migration
             $table->id();
             $table->string('quantity', 150);
             $table->string('total', 150);
+            $table->string('paymentType', 150);
+            $table->string('qtyTotal');
             $table->string('overallTotal', 150);
 
             $table->unsignedBigInteger('fk_books_id');

@@ -39,6 +39,8 @@ class SaleController extends Controller
         $data = $this->validate($request, [
             'quantity' => 'required',
             'total' => 'required',
+            'paymentType'=> 'required',
+            'qtyTotal'=> 'required',
             'overallTotal'=> 'required',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
@@ -48,6 +50,8 @@ class SaleController extends Controller
         ], [
             'quantity.required' => 'Adicione a quantidade',
             'total.required' ,
+            'paymentType',
+            'qtyTotal',
             'overallTotal',
             'fk_books_id.required' => 'Selecione o livro',
             'fk_costumers_id.required' => 'adicione o Cliente',
@@ -89,6 +93,8 @@ class SaleController extends Controller
         $data = $this->validate($request, [
             'quantity' => 'required',
             'total' => 'required',
+            'qtyTotal'=> 'required',
+            'overallTotal'=> 'required',
             'overallTotal'=> 'required',
             'fk_books_id' => 'required',
             'fk_costumers_id' => 'required',
@@ -97,6 +103,8 @@ class SaleController extends Controller
 
         ], [
             'quantity.required' => 'Adicione a quantidade',
+            'qtyTotal',
+            'overallTotal',
             'overallTotal',
             'fk_books_id.required' => 'Selecione o livro',
             'fk_costumers_id.required' => 'adicione o Cliente',

@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use App\Models\BookSupplier;
 use App\Models\Sale;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{File, Storage};
+
 
 class BookController extends Controller
 {
@@ -21,7 +22,10 @@ class BookController extends Controller
 
     public function create()
     {
-        return view('admin.book.create.index');
+        $response['book'] =  Book::get();
+        $response['supplier'] =  Supplier::get();
+        $response['booksupplier'] =  BookSupplier::get();
+        return view('admin.book.create.index',$response);
     }
 
     public function store(Request $request)
@@ -31,7 +35,7 @@ class BookController extends Controller
         if ($exist) {
             return redirect()->back()->with('existing_cadast', '1');
         }
-        $this->validate($request, [
+            $data= $this->validate($request, [
             'title' => 'required|max:150',
             'author' => 'required|max:150',
             'publisher' => ' required|max:150',
@@ -40,7 +44,7 @@ class BookController extends Controller
             'finalQuantity',
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric',
-            'image' => 'required|image|mimes:jpg,png,jpeg|max:5000',
+
 
         ], [
             'title.required' => 'Digite o título do livro',
@@ -50,37 +54,13 @@ class BookController extends Controller
             'startingAmount.required' => 'Digite a quantidade de livro',
             'purchasePrice.required' => 'Digite o preço de compra do livro',
             'salePrice.required' => 'Digite o preço de venda do livro',
-            'image.required' => 'carregue a imagem do livro',
+           
+
         ]);
 
-        $title = $request->input('title');
-        $author = $request->input('author');
-        $publisher = $request->input('publisher');
-        $isbn = $request->input('isbn');
-        $startingAmount = $request->input('startingAmount');
-        $finalQuantity = $request->input('finalQuantity');
-        $purchasePrice = $request->input('purchasePrice');
-        $salePrice = $request->input('salePrice');
 
-        $ext = $request->file("image")->getClientOriginalExtension();
-        $stringImageReFormat = str_replace(" ", "", $request->input('title'));
-        $imageName = $stringImageReFormat . "." . $ext;
-        $imageEncoded = File::get($request->image);
-        Storage::disk('local')->put('public/book_img/' . $imageName, $imageEncoded);
-
-        $books = array(
-            'title' => $title,
-            'author' => $author,
-            'publisher' => $publisher,
-            'isbn' => $isbn,
-            'startingAmount' => $startingAmount,
-            'finalQuantity' => $finalQuantity,
-            'purchasePrice' => $purchasePrice,
-            'salePrice' => $salePrice,
-            'image' => $imageName,
-        );
-        Book::create($books);
-        return redirect()->route('admin.book.create.index')->with('create', '1');
+        Book::create($data);
+        return redirect()->route('admin.book.create.index',)->with('create', '1');
     }
 
 
@@ -107,6 +87,7 @@ class BookController extends Controller
             'finalQuantity',
             'purchasePrice' => 'required|numeric',
             'salePrice' => 'required|numeric',
+            'fk_suppliers_id' => 'required',
 
         ], [
             'title.required' => 'Digite o título do livro',
@@ -115,39 +96,19 @@ class BookController extends Controller
             'isbn.required' => 'Digite o isbn do livro',
             'startingAmount.required' => 'Digite a quantidade de livro',
             'purchasePrice.required' => 'Digite o preço de compra do livro',
-            'salePrice.required' => 'Digite o preço de venda do livro'
+            'salePrice.required' => 'Digite o preço de venda do livro',
+            'fk_suppliers_id.required'=> 'Selecione o Fornecedor do livro',
         ]);
         Book::find($id)->update($data);
         return redirect()->route('admin.costumer.list.index')->with('edit', '1');
     }
 
-    public function updateImg(Request $request, $id)
-    {
-        $this->validate($request, [
-            'image' => 'required|image|mimes:jpg,png,jpeg|max:5000',
-        ]);
-        if ($request->hasFile("Image")) {
-            $books = Book::find($id);
-            $exists =  Storage::disk('local')->exists('public/book_img/' . $books->image);
-            if ($exists) {
-                Storage::delete('public/book_img/' . $books->image);
-            }
-        }
-        $request->file("image")->getClientOriginalExtension();
-        $request->image->StoreAs("public/book_img/" . $books->image);
-        $books = array('image' => $books->image);
-        Book::where("id", $id)->update($books);
-        return redirect()->route('admin.costumer.list.index')->with('edit', '1');
-    }
+
 
     public function destroy($id)
     {
         $record = Book::find($id);
-        $existsImage = Storage::disk('local')->exists('public/book_img/' . $record->image);
         $exists = BookSupplier::where('fk_books_id', $record->id)->exists();
-        if ($exists) {
-            Storage::delete('public/book_img/' . $record->image);
-        }
         if ($exists) {
             if ($record->supplier->count() > 0) {
                 return redirect()->back()->with('deleteBook', '1');

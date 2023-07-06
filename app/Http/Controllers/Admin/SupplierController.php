@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Book;
 use App\Models\BookSupplier;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
@@ -45,6 +44,7 @@ class SupplierController extends Controller
             'email.required' => 'Digite o email',
             'type.required' => 'Selecione o tipo de Fornecedor'
         ]);
+        
 
         Supplier::create($response);
         return redirect()->route('admin.supplier.create.index')->with('create', '1');
