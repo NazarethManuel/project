@@ -3,7 +3,7 @@
 @section('content')
 <div id="layoutSidenav_content">
     <main>
-        <div class="container-fluid px-4">
+        <div class="container-fluid">
             <div class="col-md-11 ml-5 ">
                 <br>
                 <h3 class="mt-4">Cadastrar Venda</h3>
@@ -31,134 +31,119 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active"></li>
                 </ol>
+            </div>
 
-            <div class="cool-md-9">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="showBook">
-                            <form action="#" method="post" id='addForm'>
-                                @csrf
-                                <div class="row">
-                                    <table id="datatablesSimple">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">Produto</th>
-                                                <th class="text-center">Preço Unt.</th>
-                                                <th class="text-center">Qtd</th>
-                                                <th class="text-center">Total</th>
-                                                <th class="text-end">Ação</th>
-                                            </tr>
-                                        </thead>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 style="float: left "></h4> Adicionar Nova Venda<a href="" style="float: right" class="btn btn-dark" data-toggle="modal" data-target="#addUser">
+                                    <i class="fa fa-plus"></i>Adicionar Nova Venda</a>
+                            </div>
+                            <div class="card-body">
 
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <select class="form-control" name="fk_books_id[]" id="books">
-                                                        <option value=""></option>
-                                                        @foreach ($books as $book)
-                                                        <option value="{{$book->id}}" {{(isset($books->id) && in_array($book->id, $sales->books->pluck('id')->toarray())) ? 'selected' : '' }}>
-                                                            {{ $book->title }}
-                                                        </option>
-                                                        @endforeach
-                                                    </select>
-                                                </td>
-                                                <td><input type="number" class="form-control" name="salePrice[]" id="salePrice" value='' readonly></td>
-                                                <td> <input type="number" class="form-control" name="quantity[]" id="quantity" value='' required></td>
-                                                <td> <input type="number" class="form-control total" readonly name="total[]" id="total" value='' required></td>
-                                                <td><button type="button" class="btn btn-primary" id="addBtn">+</button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <table class="table table-bordered table-left">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Produto</th>
+                                            <th class="text-center">Preço Unt.</th>
+                                            <th class="text-center">Qtd</th>
+                                            <th class="text-center">Total</th>
+                                            <th class="text-end">Ação</th>
+                                        </tr>
+                                    </thead>
 
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select class="form-control fk_books_id" name="fk_books_id[]" id="fk_books_id">
+                                                    <option value=""></option>
+                                                    @foreach ($books as $book)
+                                                    <option value="{{$book->id}}" {{(isset($books->id) && in_array($book->id, $sales->books->pluck('id')->toarray())) ? 'selected' : '' }}>
+                                                        {{ $book->title }}
+                                                    </option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td><input type="number" class="form-control salePrice" name="salePrice[]" value='' readonly></td>
+                                            <td> <input type="number" class="form-control quantity" name="quantity[]"  value='' required></td>
+                                            <td> <input type="number" class="form-control total" readonly name="total[]"  value='' required></td>
+                                            <td><button type="button" class="btn btn-primary" id="addBtn">+</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {{-- Employer --}}
+                                <div class="col-md-4">
+                                    <label for="fk_users_id">Funcionário</label>
+                                    <input type="text" class="form-control" name="name" id="name" value='{{ Auth::user()->name}}' readonly>
+                                </div>
 
-
-                                    {{-- Client --}}
-
-                                    <div class="col-md-4">
-                                        <label for="fk_costumers_id">Cliente</label>
-                                        <select class="form-control" name="fk_costumers_id" id="fk_costumers_id">
-                                            <option value=""></option>
-                                            @foreach ($costumers as $costumer)
-                                            <option value="{{$costumer->id}}" {{(isset($costumers->id)&& $sales->costumer->id == $costumers->id )? 'selected' : '' }}>{{ $costumer->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    {{-- <div class="col-md-6">
-                                    <label for="fk_costumers_id">Cliente</label>
-                                    <input type="text" class="form-control" name="costumer_name" id="costumer_name" value="{{ old('costumer_name') }}" />
-                                    <input type="hidden" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
-                                    <input type="checkbox" name="create_new_costumer" id="create_new_costumer">
-                                    <label for="create_new_costumer">Criar novo cliente</label>
-                                </div> --}}
-
-                                {{-- <div class="col-md-6">
-                                    <label for="fk_costumers_id">Cliente</label>
-                                    <input type="text" class="form-control" name="fk_costumers_id" id="fk_costumers_id" value="{{ old('fk_costumers_id') }}" />
-                        </div> --}}
-
-                        {{-- Employer --}}
-                        <div class="col-md-4">
-                            <label for="fk_users_id">Funcionário</label>
-                            <input type="text" class="form-control" name="name" id="name" value='{{ Auth::user()->name}}' readonly>
-
-                        </div>
-
-                        {{-- Type Payment--}}
-
-                        <div class="col-md-4">
-                            <label for="fk_typePayments_id">Tipo de Pagamento</label>
-                            <select class="form-control" name="fk_typePayments_id" id="fk_typePayments_id">
-                                <option value=""></option>
-                                @foreach ($typePayments as $typePayment)
-                                <option value="{{$typePayment->id}}" {{(isset($typePayments->id)&& $sales->typePayment->id == $typePayments->id )? 'selected' : '' }}>{{ $typePayment->type }} </option>
-                                @endforeach
-                            </select>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-12 mt-4 text-end">
-                        <button class="btn btn-primary shadow" id="primBtn"><i class="fas fa-plus"></i> Cadastrar</button>
-                    </div>
-                    </form>
                 </div>
+                {{--  <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Total</h4>
+                        </div>
+
+                        <div class="card-body">
+                            <h4>.....</h4>
+
+                        </div>
+
+
+                    </div>
+                </div>  --}}
             </div>
         </div>
-        </div>
-</div>
-</div>
-</main>
+        <style>
+            h4 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 20px;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        </style>
 
-<script type="text/javascript">
-    $(document).ready(function() {
+    </main>
+    @endsection
 
-        $("#books").on("change", function() {
-            let id = $(this).val();
-            $('#salePrice').empty();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                dataType: 'json'
-                , url: "/admin/book/getBookById/" + id
-                , type: "GET"
-                , success: function(data) {
-                    $('#salePrice').val(data.salePrice);
-                }
-                , error: function(error) {
-                    console.log(error);
-                }
-            });
-        });
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-        $("#addBtn").click(function(e) {
-            e.preventDefault();
-            $("tbody").prepend(`<tr>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+
+           /* $(".fk_books_id").on("change", function() {
+                let id = $(this).val();
+                $('.salePrice').empty();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    dataType: 'json'
+                    , url: "/admin/book/getBookById/" + id
+                    , type: "GET"
+                    , success: function(data) {
+                        $('.salePrice').val(data.salePrice);
+                    }
+                    , error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });*/
+
+            $("#addBtn").click(function(e) {
+                e.preventDefault();
+                $("tbody").prepend(`<tr>
                     <td>
-                        <select class="form-control" name="fk_books_id[]" id="books">
+                        <select class="form-control books" name="fk_books_id[]" >
                             <option value=""></option>
                             @foreach ($books as $book)
                             <option value="{{$book->id}}" {{(isset($books->id) && in_array($book->id, $sales->books->pluck('id')->toarray())) ? 'selected' : '' }}>
@@ -167,44 +152,57 @@
                             @endforeach
                         </select>
                     </td>
-                    <td><input type="number" class="form-control" name="salePrice[]" id="salePrice" value='' readonly></td>
+                    <td><input type="number" class="form-control salePrice" name="salePrice[]" id="salePrice" value='' readonly></td>
                     <td> <input type="number" class="form-control" name="quantity[]" id="quantity" value='' required></td>
                     <td> <input type="number" class="form-control total" readonly name="total[]" id="total" value='' required></td>
                     <td><button type="button" class="btn btn-danger" id="removeBtn" >-</button></td>
                 </tr>`);
 
+            });
+
+            $(document).on('click', '#removeBtn', function(e) {
+                e.preventDefault();
+                let row = $(this).parent().parent();
+                $(row).remove();
+            });
+
         });
 
-        $(document).on('click', '#removeBtn', function(e) {
+      /*  $("#addForm").submit(function(e) {
             e.preventDefault();
-            let row = $(this).parent().parent();  
-            $(row).remove();
+            $("#primBtn").val('Criando...');
+
+            $.ajax({
+                dataType: 'json'
+                , url: "/admin/sale/create"
+                , type: "GET"
+                , success: function(response) {
+                    console.log(response)
+                }
+                , error: function(error) {
+                    console.log(error);
+                }
+            });
+
         });
+*/
+
+   /* function Total(){
+    Var totalAmount = 0;
+    $('.total').each(function(i,e){
+        var amount = $(this).val() - 0;
+        totalAmount += aumount;
     });
 
-    $("#addForm").submit(function(e) {
-        e.preventDefault();
-        $("#primBtn").val('Criando...');
+     $('.total').html(totalAmount);
+    }
+*/
 
-        $.ajax({
-            dataType: 'json'
-            , url: "/admin/sale/create"
-            , type: "GET"
-            , success: function(response) {
-                console.log(response)
-            }
-            , error: function(error) {
-                console.log(error);
-            }
-        });
-
-    })
-
-</script>
+    </script>
 
 
 
 
 
 
-@endsection
+
